@@ -1,0 +1,73 @@
+
+<div class="widget form-contact" id="main_content">
+	<div class="title-section">
+		<span>{{ "Kontakt"|_ }}<i class="fa fa-chevron-right pull-right"></i></span>
+	</div>
+	<div class="body-section">
+	{% if message %}
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5">{{ message|_ }}</div>
+		</div>
+	{% endif %}
+		
+		
+		<form class="t-form form_action" action="{{mobilePrefix()}}" method="post">
+			<div class="form-row">
+				<label class="form-label" for="param_email">{{ "Email"|_ }}:<span class="req">*</span></label>
+				<div class="form-item">
+					<span class="one"><input name="email" id="param_email" value="" _autocheck="true" type="text" class="t-input"></span>
+					<div class="clear"></div>
+					{% if errors.has('email') %}
+						<div name="content_error" class="error">{{ "inputRequired"|_ }}</div>
+					{% endif %}
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="form-row">
+				<label class="form-label" for="param_name">{{ "Name"|_ }}:<span class="req">*</span></label>
+				<div class="form-item">
+					<span class="one"><input name="name" id="param_name" value="" _autocheck="true" type="text" class="t-input"></span>
+					<div class="clear"></div>
+					{% if errors.has('name') %}
+						<div name="content_error" class="error">{{ "inputRequired"|_ }}</div>
+					{% endif %}
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="form-row">
+				<label class="form-label" for="param_content">{{ "Nachricht"|_ }}:<span class="req">*</span></label>
+				<div class="form-item">
+					<span class="one"><textarea name="content" id="param_content" _autocheck="true" class="t-input" style="height:100px;" rows="" cols=""></textarea></span>
+					<div class="clear"></div>
+
+					{% if errors.has('content') %}
+						<div name="content_error" class="error">{{ "inputRequired"|_ }}</div>
+					{% endif %}
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="form-row">
+				<label class="form-label" for="security_code">{{ "Captcha"|_ }}:<span class="req">*</span></label>
+				<div class="form-item">
+					{% component 'captcha' %}
+					{% flash %}
+				 		<div name="content_error" class="error">{{ "captchaError"|_ }}</div>
+				 	{% endflash %}
+
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="form-row">
+				<label class="form-label">&nbsp;</label>
+				<div class="form-item">
+					<input type="submit" value="{{ "Senden"|_ }}" class="btn btn-login">
+				</div>
+			</div>
+		</form>
+		<div class="clear"></div>
+	</div>
+</div>

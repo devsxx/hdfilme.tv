@@ -1,0 +1,6 @@
+
+ {% for cat in categories %}
+
+    <a href="{{ url(mobilePrefix() ~ "cats", [makeSeo(cat.category_name), cat.id]) }}">{{ cat.category_name }} {{ loop.last ? '' : ',' }}</a>
+
+{% endfor %}

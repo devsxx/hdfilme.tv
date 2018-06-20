@@ -1,0 +1,15 @@
+{
+    "name": "anhi/webfilm-plugin",
+    "type": "plugin",
+    "authors": [
+        {
+            "name": "Hieu Nguyen",
+            "email": "hieunguye.ebox@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "mews/captcha": "^2.1",
+        "laravel/socialite": "2.0.*"
+    }
+}

@@ -1,0 +1,12 @@
+list: $/anhi/movie/models/country/columns.yaml
+modelClass: Anhi\Movie\Models\Country
+title: Countries
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+# filter: config_filter.yaml
+toolbar:
+    buttons: list_toolbar
+    # search:
+    #     prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'anhi/movie/countries/update/:id'

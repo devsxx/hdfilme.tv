@@ -1,0 +1,56 @@
+
+{% component "ad" name='adsMobile320x50_list' %}
+
+<div class="title-section">
+	<span>{{ title|_ }}
+	<i class="fa fa-chevron-right pull-right"></i></span>
+</div>
+
+{% partial "@_request_movie_form" %}
+
+{% component "ad" name='ads728x90_list' %}
+
+{% partial '@_filter' filters=filters filterValues=filterValues %}
+
+{% partial '@_pagination' paging=paging %}
+
+{% component "ad" name='adsMobile300x250_list' %}
+{% component "ad" name='adsMobile5tiles' %}
+{% component "ad" name='ads880x248_list' %}
+
+<div class="body-section">
+	<ul class="products row">
+
+
+		{% if keyword and total < 1 %}
+
+			<div style="text-align: center;">
+				<p style="font-size: 2rem;">No movies found for "{{ keyword }}"</p>
+			</div>
+
+		{% endif %}
+
+		{% for movie in movieList %}
+		
+		<li>
+			{% partial '@_poster_item.htm' movie=movie %}
+		</li>
+
+			{% if not isMobile() %}
+
+			    {% partial "@_movie_info_popover" movie=movie %}
+
+			{% endif %}
+
+		{% endfor %}
+	</ul>
+</div>
+
+{% partial '@_pagination' paging=paging %}
+
+{% component "ad" name='adsMobile320x50_list' %}
+{% component "ad" name='ads728x90_list' %}
+
+{% if not isMobile() %}
+	<script type="text/javascript" src="{{assets}}/js/poster_slider.js"></script>
+{% endif %}

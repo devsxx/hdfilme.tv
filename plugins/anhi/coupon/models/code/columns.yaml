@@ -1,0 +1,7 @@
+columns:
+    code:
+        label: code
+        type: text
+    user_email:
+        label: 'User Email'
+        type: number

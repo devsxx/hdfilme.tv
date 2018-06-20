@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: ID
+        type: text
+    name:
+        label: 'Tên khuyến mãi'
+        type: text
+    quantity:
+        label: 'Số lượng code'
+        type: text
+    days:
+        label: 'Số ngày'
+        type: text
+    from:
+        label: 'Từ ngày'
+        type: datetime
+    to:
+        label: 'Đến ngày'
+        type: datetime
+    status:
+        label: 'Bật tắt'
+        type: switch
+    created_at:
+        label: 'Ngày tạo'
+        type: datetime

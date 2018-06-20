@@ -1,0 +1,11 @@
+columns:
+    country_name:
+        label: 'Quốc Gia'
+        type: text
+        searchable: true
+        sortable: true
+    order:
+        label: 'Thứ Tự'
+        type: text
+        searchable: true
+        sortable: true

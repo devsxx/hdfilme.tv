@@ -1,0 +1,12 @@
+list: $/anhi/payment/models/paymentpackages/columns.yaml
+modelClass: Anhi\Payment\Models\PaymentPackages
+title: Package
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+filter: config_filter.yaml
+toolbar:
+    buttons: list_toolbar
+    # search:
+    #     prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'anhi/payment/package/update/:id'

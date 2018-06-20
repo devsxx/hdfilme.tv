@@ -1,0 +1,18 @@
+
+<div id="tab-{{ type }}-{{ key }}" class="tab-pane fade {{ activeClass }}">
+
+	{% if movieList[type] %}
+
+		<div class="body-widget-sidebar slimScroll">
+
+			{% for movie in movieList[type] %}
+
+				{% partial '@_movie_item_sidebar' favourite=0 type="PLAY NOW" info=movie %}
+
+			{% endfor %}
+
+		</div>
+
+	{% endif %}
+
+</div>

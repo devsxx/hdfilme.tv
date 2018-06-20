@@ -1,0 +1,18 @@
+<div class="toggle-wrapper">
+
+	<div class="navi-favorited toggle-parent">
+		{{ "favourite"|_ }}(<span class="favourite-movies-total">{{favourite}}</span>) <i class="fa fa-angle-double-right pull-right" style="line-height: inherit;"></i>
+	</div>
+
+	{% if listFavourite %}
+		<div class="toggle-content">
+			<section class="widget-sidebar widget-product">
+				<div class="body-widget-sidebar slimScroll">
+					{% for info in listFavourite %}
+						{% partial "@_movie_item_sidebar" type="STREAM" info=info favourite=favourite %}
+					{% endfor %}
+				</div>
+			</section>
+		</div>
+	{% endif %}
+</div>

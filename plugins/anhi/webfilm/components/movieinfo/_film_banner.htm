@@ -1,0 +1,116 @@
+<div class="banner-film row">
+
+    <div class="banner-image">
+        <img src="{{ movie.banner.path }}" onerror="this.onerror=null;this.src='{{ assets }}/img/no_banner.jpg';">
+    </div>
+
+    <div class="decapdion clearfix">
+
+        <div class="img-thumb pull-left">
+            <img src="{{ movie.poster.thumb }}" onerror="this.onerror=null;this.src='{{ "assets/img/default_thumb.jpg"|theme }}';">
+        </div>
+
+        <!-- title and description -->
+        <div class="name pull-left">
+
+            <b class="text-blue title-film">{{ movie["name"] }}</b>
+
+            <div class="caption">
+                <div class="caption-scroll">
+                    {{ str_limit(movie["desc"], 450) }}
+                </div>
+            </div>
+
+            <b class="text-blue desktop-display">{{ "Ansehen"|_ }} : {{ movie["view"] ? movie["view"] : 0 }}</b>
+            <div class="clear"></div>
+
+            {% if movie["demo_link"] %}
+                <a
+                    class="btn btn-xemnow pull-right"
+                    style="margin-left:5px"
+                    href="{{ url(mobilePrefix() ~ movie["friendly_url"] ~ "-" ~ movie["id"] ~ "-trailer") }}">
+
+                    Trailer <i class="fa fa-play-circle"></i>
+
+                </a>
+            {% endif %}
+
+            {% if movie["type"] != 3 %}
+                <a
+                    class="btn btn-xemnow pull-right"
+                    style="margin-left:5px"
+                    href="{{ url(mobilePrefix() ~ movie["friendly_url"] ~ "-" ~ movie["id"] ~ "-stream") }}">
+
+                     <i class="fa fa-chevron-right"></i>
+                    PLAY NOW <i class="fa fa-play-circle"></i>
+
+                </a>
+            {% endif %}
+
+        </div>
+
+        <div class="movie-info pull-left">
+            <div class="movie-info-scroll">
+
+                <p><span class="text-blue">{{ "Originaltitel"|_ }}: </span>
+                    {{ movie.english_name }}
+                </p>
+                
+                <p><span class="text-blue">{{ "Genre"|_ }}: </span>
+                    {% partial '@_genre' categories=movie.categories %}
+                </p>
+
+                <p><span class="text-blue">{{ "IMDb"|_ }}: </span> {{ movie["imdb"] }}</p>
+
+                <p><span class="text-blue">{{ "Bewerten"|_ }}: </span> {{ movie["rate"] }} ({{ movie["rate_count"] }} {{ "Bewertungen"|_ }})</p>
+
+                <p><span class="text-blue">{{ "Erscheinungsjahr"|_ }}: </span> {{ movie["year"] }}</p>
+
+                
+                {% if movie.type == 2 %}
+
+                    <p><span class="text-blue">{{ "Episode"|_ }}: </span> {{ movie["episode_current"] }}/{{ movie["episode_total"] }}</p>
+
+                {% endif %}
+
+                <p><span class="text-blue">{{ "Regisseur"|_ }}: </span>
+                    {% partial '@_director' directors=movie.directors %}
+                </p>
+
+                <p><span class="text-blue">{{ "Schauspieler"|_ }}: </span>
+                    {% partial '@_actor' actors=movie.actors %}
+                </p>
+
+                <p><span class="text-blue">{{ "Land"|_ }}: </span> {{ movie.country.country_name }}</p>
+
+                <p><span class="text-blue">{{ "Laufzeit"|_ }}: </span>{{ movie["length"] }} {{ "Minuten"|_ }}</p>
+
+                {% if movie["audio"] != 0 %}
+                    <p><span class="text-blue">{{ "Audio"|_ }}: </span>MIC</p>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        (function($)
+        {
+            $(document).ready(function()
+            {
+                $('.banner-film .movie-info-scroll').slimScroll({
+                    height: '150px',
+                    color:'#68C939',
+                    alwaysVisible: true
+                });
+                $('.banner-film .caption-scroll').slimScroll({
+                    height: '90px',
+                    color:'#68C939',
+                    alwaysVisible: true
+                });
+            });
+        })(jQuery);
+    </script>
+
+</div>

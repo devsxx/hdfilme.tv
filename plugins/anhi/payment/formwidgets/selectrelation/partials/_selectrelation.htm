@@ -1,0 +1,5 @@
+<select name="<?= $name ?>"  class="form-control custom-select">
+    <?php foreach ($list as $key => $name): ?>
+        <option value="<?= $key ?>" <?= $value == $key ? 'selected' : ''  ?>><?= $name ?></option>
+    <?php endforeach ?>
+</select>

@@ -1,0 +1,35 @@
+<h3>{{ 'SPENDENGESCHICHTE'|_ }}</h3>
+
+{% if not histories %}
+
+	<p>@lang("messages.userNoTrans")</p>
+
+{% else %}
+
+	<div class="table-wrapper">
+		<table class="table table-rate">
+			<thead>
+			<tr>
+				<th class="none-border table-title">{{ "Spenden ID"|_ }}</th>
+				<th class="none-border table-title">{{ "Paygate"|_ }}</th>
+				<th class="none-border table-title">{{ "Datum"|_ }}</th>
+				<th class="none-border table-title">{{ "Summe"|_ }}</th>
+				<th class="none-top table-title">{{ "VIP"|_ }}</th>
+			</tr>
+			</thead>
+			<tbody>
+				{% for history in histories %}
+				<tr>
+					<td class="none-border">{{ history.paygate_code ~ "_" ~ history.id }}</td>
+					<td class="none-border">{{ history.paygate_name }}</td>
+					<td class="none-border">{{ history.created_at }}</td>
+					<td class="none-border">{{ history.money }}</td>
+					<td class="none-top">{{ history.days }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	{% partial '@_pagination' paging=paging %}
+	
+{% endif %}

@@ -1,0 +1,15 @@
+title = "Payment"
+url = "/mobile/payment-list"
+layout = "payment"
+is_hidden = 0
+
+[viewBag]
+localeUrl[de] = "/payment"
+
+[payment]
+
+[session]
+security = "user"
+redirect = "login"
+==
+{% component "payment" %}

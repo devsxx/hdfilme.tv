@@ -1,0 +1,13 @@
+columns:
+    episode:
+        label: Tập
+        type: text
+    episode_show:
+        label: 'Tên tập'
+        type: text
+    url:
+        label: URL
+        type: text
+    minute:
+        label: Minutes
+        type: number

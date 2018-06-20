@@ -1,0 +1,69 @@
+<div class="profile-content">
+	<div id="personal-info-pf" class="col-lg-9 col-md-12 col-sm-12 col-xs-12 personal-info">
+		<h3>{{ "Info bearbeiten"|_ }}</h3>
+		<form class="t-form form_action form-horizontal" action="{{url("/user/edit")}}" method="post">
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "email"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					<input class="form-control" id="email-profile" value="{{ user.email }}" type="text" disabled="disabled">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "name"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					<input class="form-control" name="name" id="name" value="{{ user.name }}" _autocheck="true" type="text" class="t-input">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Derzeitiges Password"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					<div class="input-append">
+						<input name="password_old" class="form-control" id="password_old" _autocheck="true" type="password" class="t-input">
+						{% if errors.has("password_old") %}
+						<div name="password_old_error" class="error">
+							<p>{{ errors.first('password_old')|_ }}</p>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Neues Password"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					<input name="password" id="password" _autocheck="true" type="password" class="form-control" title="Passwort muss mindestens 6 Zeichen lang sein">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Kennwort wiederholen"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					<input name="password_confirmation" id="password_repeat" _autocheck="true" type="password" class="form-control">
+					{% if errors.has("password_confirmation") %}
+					<div name="password_repeat_error" class="error">
+						<p>{{ errors.first('password_confirmation')|_ }}</p>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Sprache"|_ }}</label>
+				<div class="col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					<select class="form-control " name="">
+						<option value="" selected="selected">
+							{{ "Deutsch"|_ }}
+						</option>
+						<option value="year">
+							{{ "Englisch"|_ }}
+						</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label"></label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12 bt-padding">
+					<input type="submit" class="button-style button-inline" value="Aktualisieren">
+					<input type="reset" class="button-style button-inline" value="Aufhebung" class="buttonM bDefault">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: ID
+        type: number
+    code:
+        label: Mã
+        type: text
+    paygate_name:
+        label: 'Tên cổng'
+        type: text
+    created_at:
+        label: 'Ngày tạo'
+        type: datetime
+    updated_at:
+        label: 'Ngày cập nhật'
+        type: datetime
+    active:
+        label: 'Trạng thái'
+        type: switch

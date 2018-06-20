@@ -1,0 +1,20 @@
+fields:
+    name:
+        label: Name
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    mobile:
+        label: 'For mobile'
+        span: auto
+        type: switch
+    active:
+        label: Active
+        span: auto
+        type: switch
+    html:
+        label: Html
+        size: ''
+        oc.commentPosition: ''
+        span: full
+        type: textarea

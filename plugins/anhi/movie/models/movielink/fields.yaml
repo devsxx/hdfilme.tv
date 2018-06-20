@@ -1,0 +1,23 @@
+fields:
+    episode:
+        label: Tập
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: number
+    episode_show:
+        label: 'Tên tập'
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: text
+    url:
+        label: URL
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    minute:
+        label: Minutes
+        oc.commentPosition: ''
+        span: auto
+        type: number

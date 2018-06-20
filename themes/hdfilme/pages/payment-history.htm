@@ -1,0 +1,16 @@
+title = "Payment history"
+url = "/user/payment-history"
+layout = "user"
+is_hidden = 0
+
+[paymentHistory]
+
+[viewBag]
+localeUrl[DE] = "/payment-history"
+
+
+[session]
+security = "user"
+redirect = "login"
+==
+{% partial 'pages/payment-history' %}

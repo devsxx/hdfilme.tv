@@ -1,0 +1,99 @@
+plugin:
+    name: 'anhi.movie::lang.plugin.name'
+    description: 'anhi.movie::lang.plugin.description'
+    author: anhi
+    icon: oc-icon-video-camera
+    homepage: ''
+navigation:
+    movie:
+        label: Phim
+        url: anhi/movie/movies
+        icon: icon-video-camera
+        permissions:
+            - movie
+        sideMenu:
+            movie-list:
+                label: 'Danh sách phim'
+                url: anhi/movie/movies
+                icon: icon-film
+                permissions:
+                    - movie
+            movie-cat:
+                label: 'Thể loại'
+                url: anhi/movie/categories
+                icon: icon-th-list
+                permissions:
+                    - cat
+            country:
+                label: 'Quốc gia'
+                url: anhi/movie/countries
+                icon: icon-flag
+                permissions:
+                    - country
+            moive-user-request:
+                label: 'Yêu cầu phim'
+                url: anhi/movie/movieuserrequest
+                icon: icon-paper-plane
+                permissions:
+                    - movie.handle_movie_request
+            movie-error-report:
+                label: 'Báo lỗi phim'
+                url: anhi/movie/movieerrorreport
+                icon: icon-exclamation-circle
+                permissions:
+                    - movie.report_error
+    menu-notification:
+        label: Notifications
+        url: anhi/movie/notification
+        icon: icon-life-ring
+        permissions:
+            - notification
+permissions:
+    movie:
+        tab: Phim
+        label: 'Quản lý phim'
+    movie.add:
+        tab: Phim
+        label: 'Thêm phim'
+    movie.delete:
+        tab: Phim
+        label: 'Xoá phim'
+    movie.handle_movie_request:
+        tab: Phim
+        label: 'Xử lý phim yêu cầu'
+    country:
+        tab: 'Quốc Gia'
+        label: 'Quản lý quốc gia'
+    country.add:
+        tab: 'Quốc Gia'
+        label: 'Thêm quốc gia'
+    country.delete:
+        tab: 'Quốc Gia'
+        label: 'Xoá quốc gia'
+    cat:
+        tab: 'Thể loại phim'
+        label: 'Quản lý thể loại phim'
+    cat.add:
+        tab: 'Thể loại phim'
+        label: 'Thêm thể loại phim'
+    cat.delete:
+        tab: 'Thể loại phim'
+        label: 'Xoá thể loại phim'
+    notification:
+        tab: 'Thông báo'
+        label: 'Quản lý thông báo'
+    notification.add:
+        tab: 'Thông báo'
+        label: 'Thêm thông báo'
+    notification.delete:
+        tab: 'Thông báo'
+        label: 'Xoá thông báo'
+    transaction:
+        tab: 'Nạp Tiền'
+        label: 'Quản lý nạp tiền'
+    movie.report_error:
+        tab: Phim
+        label: 'Báo lỗi phim'
+    movie.delete_report_error:
+        tab: Phim
+        label: 'Quản lý báo lỗi phim'

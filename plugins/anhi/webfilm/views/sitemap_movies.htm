@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+	{% for movie in list %}
+
+   	<url>
+
+      	<loc>{{ url(mobile ~ movie.friendly_url ~ '-' ~ movie.id ~ '-info') }}</loc>
+
+      	<lastmod>{{ formatDate(movie.updated_at, 'Y-m-d') }}</lastmod>
+
+      	<changefreq>daily</changefreq>
+
+      	<priority>0.6</priority>
+
+   	</url>
+
+   	<url>
+
+      	<loc>{{ url(mobile ~ movie.friendly_url ~ '-' ~ movie.id ~ '-stream') }}</loc>
+
+      	<lastmod>{{ formatDate(movie.updated_at, 'Y-m-d') }}</lastmod>
+
+      	<changefreq>daily</changefreq>
+
+      	<priority>0.6</priority>
+
+   	</url>
+
+   	{% endfor %}
+
+</urlset> 

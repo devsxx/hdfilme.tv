@@ -1,0 +1,59 @@
+
+<div id="movie-data-popover-{{ movie.id }}" style="display:none;">
+
+    <div class="popover-title">
+        <span class="name">{{ movie.name }}</span>
+    </div>
+
+    <div class="popover-content">
+        <p>{{ str_limit(movie.desc, 450, '...') }}</p>
+
+        <hr>
+
+        <p>
+            <b>{{ 'Genres'|_ }}: </b>
+            {% partial '@_genre' categories=movie.categories %}
+        </p>
+
+        <b>{{ 'IMDB'|_ }}: </b>{{ movie.imdb }}
+
+        <br>
+
+        <div class="start clearfix">
+
+            <div class="pull-left"><b> {{ 'Rating'|_ }}:</b> </div>
+
+            <div class="review pull-left ">
+                {% partial '@_rating' name=movie.name rate=movie.rate %}
+            </div>
+
+        </div>
+
+        <div class="action-button">
+            <a
+                class="btn btn-favorite {{ isFavourite(movie.id) ? 'active' : ''}}" 
+                href="javascript:void(0)" 
+                onclick="{% if not user %} popupLogin('{{url(mobilePrefix() ~ 'login')}}') {% else %} favorite(this) {% endif %}" 
+                movie-id="{{ movie.id }}" 
+                _field="movie_favorite" 
+                title="{{ 'Favorite'|_ }}"
+                id="send_movie_favorite-{{ movie.id }}">
+                <span class="glyphicon"></span>
+                {{ 'Favorite'|_ }}
+            </a>
+            <a
+                class="btn btn-watchlater {{ isWatchLater(movie.id) ? 'active' : '' }}" 
+                href="javascript:void(0)" 
+                onclick="{% if not user %} popupLogin('{{url(mobilePrefix() ~ 'login')}}') {% else %}  watchLater(this) {% endif %}" 
+                movie-id="{{ movie.id }}" 
+                _field="movie_watch_later" 
+                title="{{ 'Watch later'|_ }}"
+                id="send_movie_watchlater-{{ movie.id }}">
+                <span class="glyphicon"></span>
+                {{ 'Watch later'|_ }}
+            </a>
+        </div>
+
+    </div>
+
+</div>

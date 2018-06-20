@@ -1,0 +1,17 @@
+title = "Login"
+url = "/mobile/login"
+layout = "member"
+is_hidden = 0
+
+[viewBag]
+localeUrl[de] = "/login"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "guest"
+redirect = "home"
+==
+{% partial 'pages/login' %}

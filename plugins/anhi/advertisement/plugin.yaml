@@ -1,0 +1,23 @@
+plugin:
+    name: 'anhi.advertisement::lang.plugin.name'
+    description: 'anhi.advertisement::lang.plugin.description'
+    author: anhi
+    icon: oc-icon-buysellads
+    homepage: ''
+navigation:
+    ad-menu:
+        label: 'Quảng Cáo'
+        url: anhi/advertisement/adcontroller
+        icon: icon-buysellads
+        permissions:
+            - ads
+permissions:
+    ads:
+        tab: 'Quảng cáo'
+        label: 'Quản lý quáng cáo'
+    ads.add:
+        tab: 'Quảng cáo'
+        label: 'Thêm quảng cáo'
+    ads.delete:
+        tab: 'Quảng cáo'
+        label: 'Xoá quảng cáo'

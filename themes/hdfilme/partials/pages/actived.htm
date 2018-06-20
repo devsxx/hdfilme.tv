@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row main">
+		<div class="navbar-menu">
+			<div class="row col-xs-12 col-md-8 col-lg-8">
+				<div class="logo">
+					<a href="{{mobilePrefix()}}">
+						<img src="{{ 'assets/img/logo.png'|theme }}" class="img-responsive">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="bg-main">
+			<div class="col-xs-12 col-md-12">
+				<h1 class="title text-center"><span>{{ "AKTIVIERE DEN ACCOUNT"|_ }}</span></h1>
+			</div>
+			<div class="col-xs-12 col-md-12">
+				<div class="row text-center">
+					{{ session('message') }}
+				</div>
+			</div><!--end block-->
+		</div>
+	</div>
+</div>

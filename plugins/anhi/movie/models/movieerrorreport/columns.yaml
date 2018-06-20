@@ -1,0 +1,32 @@
+columns:
+    id:
+        label: 'ID'
+        type: text
+    movie_name:
+        label: 'Tên phim'
+        type: text
+    date_add:
+        label: 'Ngày báo lỗi'
+        type: datetime
+    episode:
+        label: Tập
+        type: text
+    user_email:
+        label: 'Thành viên'
+        type: text
+    movie_error:
+        label: 'Lỗi video'
+        type: text
+    audio_error:
+        label: 'Lỗi audio'
+        type: text
+    description:
+        label: 'Mô tả'
+        type: text
+    actions:
+        label: 'Hành động'
+        type: partial
+        clickable: false
+        path: ~/plugins/anhi/movie/models/movieerrorreport/_actions.htm
+        searchable: false
+        sortable: false

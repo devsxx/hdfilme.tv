@@ -1,0 +1,48 @@
+{% if filters and is_array(filters) %}
+	<div class="ordering row custom-scrolbar">
+		<form id="form-ordering" action="#" method="get">
+
+			{% for name, values in filters %}
+
+				<div class="col-md-2 col-sm-3">
+					<select class="orderby" name="{{ name }}">
+						<option value="">{{ name|_ }}</option>
+
+						{% if is_array(values) %}
+
+							{% for value in values %}
+								<option
+									{{ filterValues[name] == value.id ? "selected" : "" }}
+									value="{{ value.id }}">
+									{{ value[name ~ '_name'] }}
+								</option>
+							{% endfor %}
+
+						{% endif %}
+					</select>
+				</div>
+
+			{% endfor %}
+
+			<div style="float: left; margin-left: 5px;">
+				<a 
+					class="order-up btn btn-search
+						{{ filterValues.sort_type == "asc" ? "active" : "" }}"
+					href="javascript:void(0)"
+					value="asc">
+					<i class="fa fa-caret-up"></i>
+				</a>
+
+				<a
+					class="order-down btn btn-search
+					{{ filterValues.sort_type == "desc" ? "active" : "" }}"
+					href="javascript:void(0)" value="desc">
+					<i class="fa fa-caret-down"></i>
+				</a>
+
+				<input type="submit" class="btn btn-search" value="{{ "Suchen"|_ }}" style="width: 113px;">
+				<input type="hidden" name="sort_type" value="desc">
+			</div>
+		</form>
+	</div>
+{% endif %}

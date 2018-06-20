@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: 'Mã số'
+        type: number
+    user_email:
+        label: User
+        type: text
+        searchable: true
+    paygate_name:
+        label: 'Gói nạp'
+        type: text
+    days:
+        label: Ngày
+        type: text
+        searchable: true
+    money:
+        label: Giá
+        type: text
+        searchable: true
+    created_at:
+        label: 'Khởi tạo'
+        type: datetime

@@ -1,0 +1,36 @@
+fields:
+    name:
+        label: 'Tên khuyến mãi'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    quantity:
+        type: partial
+        span: auto
+        path: ~/plugins/anhi/coupon/models/couponcode/_code.htm
+    days:
+        label: "\bSố ngày"
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    from:
+        label: 'Áp dụng từ ngày'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    to:
+        label: 'Đến ngày'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        type: datepicker
+    status:
+        label: 'Bật / Tắt'
+        span: auto
+        default: 1
+        type: switch
+    codes:
+        label: Mã code
+        type: partial
+        path: field_codes

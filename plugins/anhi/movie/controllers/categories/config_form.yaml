@@ -1,0 +1,10 @@
+name: Categories
+form: $/anhi/movie/models/category/fields.yaml
+modelClass: Anhi\Movie\Models\Category
+defaultRedirect: anhi/movie/categories
+create:
+    redirect: 'anhi/movie/categories/update/:id'
+    redirectClose: anhi/movie/categories
+update:
+    redirect: anhi/movie/categories
+    redirectClose: anhi/movie/categories

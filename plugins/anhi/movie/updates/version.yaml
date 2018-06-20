@@ -1,0 +1,245 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table anhi_movie_countries'
+    - builder_table_create_anhi_movie_countries.php
+1.0.3:
+    - 'Created table anhi_movie_cats'
+    - builder_table_create_anhi_movie_cats.php
+1.0.4:
+    - 'Created table anhi_movie_movies'
+    - builder_table_create_anhi_movie_movies.php
+1.0.5:
+    - 'Created table anhi_movie_movie_cat'
+    - builder_table_create_anhi_movie_movie_cat.php
+1.0.6:
+    - 'Updated table anhi_movie_cats'
+    - builder_table_update_anhi_movie_cats.php
+1.0.7:
+    - 'Updated table anhi_movie_countries'
+    - builder_table_update_anhi_movie_countries.php
+1.0.8:
+    - 'Created table anhi_movie_categories'
+    - builder_table_create_anhi_movie_categories.php
+1.0.9:
+    - 'Drop table anhi_movie_cats'
+    - builder_table_delete_anhi_movie_cats.php
+1.0.10:
+    - 'Drop table anhi_movie_movie_cat'
+    - builder_table_delete_anhi_movie_movie_cat.php
+1.0.11:
+    - 'Created table anhi_movie_movie_category'
+    - builder_table_create_anhi_movie_movie_category.php
+1.0.12:
+    - 'Updated table anhi_movie_categories'
+    - builder_table_update_anhi_movie_categories.php
+1.0.13:
+    - 'Created table anhi_movie_movies_categories'
+    - builder_table_create_anhi_movie_movies_categories.php
+1.0.14:
+    - 'Drop table anhi_movie_movies_categories'
+    - builder_table_delete_anhi_movie_movies_categories.php
+1.0.15:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies.php
+1.0.16:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_2.php
+1.0.17:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_3.php
+1.0.18:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_4.php
+1.0.19:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_5.php
+1.0.20:
+    - 'Created table anhi_movie_servers'
+    - builder_table_create_anhi_movie_servers.php
+1.0.21:
+    - 'Drop table anhi_movie_servers'
+    - builder_table_delete_anhi_movie_servers.php
+1.0.22:
+    - 'Created table anhi_movie_actors'
+    - builder_table_create_anhi_movie_actors.php
+1.0.23:
+    - 'Created table anhi_movie_movie_actor'
+    - builder_table_create_anhi_movie_movie_actor.php
+1.0.24:
+    - 'Created table anhi_movie_directors'
+    - builder_table_create_anhi_movie_directors.php
+1.0.25:
+    - 'Updated table anhi_movie_actors'
+    - builder_table_update_anhi_movie_actors.php
+1.0.26:
+    - 'Created table anhi_movie_movie_director'
+    - builder_table_create_anhi_movie_movie_director.php
+1.0.27:
+    - 'Created table anhi_movie_producers'
+    - builder_table_create_anhi_movie_producers.php
+1.0.28:
+    - 'Created table anhi_movie_movie_producer'
+    - builder_table_create_anhi_movie_movie_producer.php
+1.0.29:
+    - 'Created table anhi_movie_tags'
+    - builder_table_create_anhi_movie_tags.php
+1.0.30:
+    - 'Created table anhi_movie_movie_tag'
+    - builder_table_create_anhi_movie_movie_tag.php
+1.0.31:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_6.php
+1.0.32:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_7.php
+1.0.33:
+    - 'Created table anhi_movie_movie_user_requests'
+    - builder_table_create_anhi_movie_movie_user_requests.php
+1.0.34:
+    - 'Created table anhi_movie_movie_error_reports'
+    - builder_table_create_anhi_movie_movie_error_reports.php
+1.0.35:
+    - 'Updated table anhi_movie_movie_error_reports'
+    - builder_table_update_anhi_movie_movie_error_reports.php
+1.0.36:
+    - 'Created table anhi_movie_movie_links'
+    - builder_table_create_anhi_movie_movie_links.php
+1.0.37:
+    - 'Updated table anhi_movie_movie_links'
+    - builder_table_update_anhi_movie_movie_links.php
+1.0.38:
+    - 'Created table anhi_movie_movie_favourite'
+    - builder_table_create_anhi_movie_movie_favourite.php
+1.0.39:
+    - 'Created table anhi_movie_movie_watch_later'
+    - builder_table_create_anhi_movie_movie_watch_later.php
+1.0.40:
+    - 'Created table anhi_movie_movie_episode_watch'
+    - builder_table_create_anhi_movie_movie_episode_watch.php
+1.0.41:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_8.php
+1.0.42:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_9.php
+1.0.43:
+    - 'Created table anhi_movie_notifications'
+    - builder_table_create_anhi_movie_notifications.php
+1.0.44:
+    - 'Created table anhi_movie_notifications_user_read'
+    - builder_table_create_anhi_movie_notifications_user_read.php
+1.0.45:
+    - 'Created table anhi_movie_contacts'
+    - builder_table_create_anhi_movie_contacts.php
+1.0.46:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_10.php
+1.0.47:
+    - 'Updated table anhi_movie_contacts'
+    - builder_table_update_anhi_movie_contacts.php
+1.0.48:
+    - 'Updated table anhi_movie_contacts'
+    - builder_table_update_anhi_movie_contacts_2.php
+1.0.49:
+    - 'Created table anhi_movie_movie_rating'
+    - builder_table_create_anhi_movie_movie_rating.php
+1.0.50:
+    - 'Add index anhi_movie_movie_rating'
+    - add_index_movie_rating.php
+1.0.52:
+    - 'Add index movie_actor'
+    - add_index_movie_actor.php
+1.0.53:
+    - 'Add index movie_category'
+    - add_index_movie_category.php
+1.0.54:
+    - 'Add index movie_director'
+    - add_index_movie_director.php
+1.0.55:
+    - 'Add index error_report'
+    - add_index_movie_error_report.php
+1.0.56:
+    - 'Add index movie_favourite'
+    - add_index_movie_favourite.php
+1.0.57:
+    - 'Add index movie_link'
+    - add_index_movie_link.php
+1.0.58:
+    - 'Add index movie_producer'
+    - add_index_movie_producer.php
+1.0.59:
+    - 'Add index movie_request'
+    - add_index_movie_request.php
+1.0.60:
+    - 'Add index movie_watch_later'
+    - add_index_movie_watch_later.php
+1.0.61:
+    - 'Updated table anhi_movie_notifications'
+    - builder_table_update_anhi_movie_notifications.php
+1.0.62:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_11.php
+1.0.63:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_12.php
+1.0.64:
+    - 'Updated table anhi_movie_movie_user_requests'
+    - builder_table_update_anhi_movie_movie_user_requests.php
+1.0.66:
+    - 'Updated table anhi_movie_movie_links'
+    - builder_table_update_anhi_movie_movie_links_3.php
+1.0.67:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_13.php
+1.0.68:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_14.php
+1.0.69:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_15.php
+1.0.70:
+    - 'Updated table anhi_movie_movie_error_reports'
+    - builder_table_update_anhi_movie_movie_error_reports_2.php
+1.0.71:
+    - 'Updated table anhi_movie_movie_error_reports'
+    - builder_table_update_anhi_movie_movie_error_reports_3.php
+1.0.72:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_16.php
+1.0.73:
+    - 'Updated table anhi_movie_notifications_user_read'
+    - builder_table_update_anhi_movie_notifications_user_read.php
+1.0.74:
+    - 'Updated table anhi_movie_movies'
+    - builder_table_update_anhi_movie_movies_17.php
+1.0.75:
+    - 'Updated table anhi_movie_movie_error_reports'
+    - builder_table_update_anhi_movie_movie_error_reports_4.php
+1.0.76:
+    - 'Updated table anhi_movie_notifications_user_read'
+    - builder_table_update_anhi_movie_notifications_user_read_2.php
+1.0.77:
+    - 'Updated table anhi_movie_contacts'
+    - builder_table_update_anhi_movie_contacts_3.php
+1.0.78:
+    - 'Updated table anhi_movie_movie_user_requests'
+    - builder_table_update_anhi_movie_movie_user_requests_2.php
+1.0.79:
+    - 'Updated table anhi_movie_notifications'
+    - builder_table_update_anhi_movie_notifications_2.php
+1.0.80:
+    - 'Updated table anhi_movie_notifications_user_read'
+    - builder_table_update_anhi_movie_notifications_users.php
+1.0.81:
+    - 'Updated table anhi_movie_notifications'
+    - builder_table_update_anhi_movie_notifications_3.php
+1.0.82:
+    - 'Updated table anhi_movie_movie_user_requests'
+    - builder_table_update_anhi_movie_movie_user_requests_3.php
+1.0.83:
+    - 'Updated table anhi_movie_movie_error_reports'
+    - builder_table_update_anhi_movie_movie_error_reports_5.php
+1.0.84:
+    - 'Updated table anhi_movie_movie_links'
+    - builder_table_update_anhi_movie_movie_links_2.php

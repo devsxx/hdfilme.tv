@@ -1,0 +1,15 @@
+title = "Movie List by Category"
+url = "/cats/:cat/:id|\d+"
+layout = "default"
+is_hidden = 0
+
+[movieList]
+[sidebar]
+
+[viewBag]
+localeUrl[de] = "/film-list"
+
+[session]
+security = "all"
+==
+{% partial 'pages/movie-cat-list' %}

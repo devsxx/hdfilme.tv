@@ -1,0 +1,17 @@
+title = "User Movie"
+url = "/mobile/user/movie/:type|favorite|watch-later|report|request"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[de] = "/user-movie"
+
+[captcha]
+
+[userMovie]
+
+[session]
+security = "user"
+redirect = "login"
+==
+{% partial 'pages/user-movie' %}

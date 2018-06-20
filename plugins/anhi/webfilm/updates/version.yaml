@@ -1,0 +1,5 @@
+1.0.1:
+    - Initialize plugin.
+1.0.2:
+    - Add Full Text Search to Movies table.
+    - add_full_text_index.php

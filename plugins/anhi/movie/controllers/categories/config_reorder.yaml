@@ -1,0 +1,4 @@
+title: Categories
+modelClass: Anhi\Movie\Models\Category
+toolbar:
+    buttons: reorder_toolbar

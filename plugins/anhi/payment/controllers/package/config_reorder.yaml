@@ -1,0 +1,4 @@
+title: Package
+modelClass: Anhi\Payment\Models\PaymentPackages
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,5 @@
+columns:
+    name:
+        label: 'Tên tag'
+        type: text
+        searchable: true

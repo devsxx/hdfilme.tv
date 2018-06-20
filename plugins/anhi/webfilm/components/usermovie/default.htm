@@ -1,0 +1,83 @@
+<div class="box">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 sidebar-myfilm">
+				{% partial "@_user_movie_nav" type=type %}
+			</div>
+			<div class="main col-md-9">
+				<div class="title-section">
+					<span>{{ type|_ }}<i class="fa fa-chevron-right pull-right"></i></span>
+				</div>
+				{% if type =='request' %}
+					{% partial "@_request_movie_form" %}
+				{% endif %}
+
+				{% if listMovie %}
+
+					<div class="body-section">
+						<ul class="products row">
+
+							{% for info in listMovie %}
+
+								<li>
+
+									{% partial "@_poster_item" movie=info removeLink=url("user/movie/" ~ type ~ "?action=remove&movieId=" ~ info["id"]) %}
+
+								</li>
+
+								{% if not isMobile() %}
+
+								    {% partial "@_movie_info_popover" movie=info %}
+
+								{% endif %}
+								
+							{% endfor %}
+						</ul>
+					</div>
+				{% elseif listHistory %}
+					<div class="body-section table-wrapper">
+						<table class="table table-rate">
+							<thead>
+							<tr>
+								{% for key, value in listHistory[0].toArray() %}
+									<th class="none-border table-title">{{ key|_ }}</th>
+								{% endfor %}
+								<th class="none-top table-title"></th>
+							</tr>
+							</thead>
+							<tbody>
+							{% for history in listHistory %}
+								<tr>
+									{% for key, value in history.toArray() %}
+
+										{% if key=='movie_name' %}
+											<td class="none-border">
+												<a href="{{ history['link'] }}">{{ value }}</a>
+											</td>
+										{% elseif (str_content(value, "http") == 0) %}
+											<td class="none-border">
+												<a href="{{ value }}">{{str_limit(value, 20)}}</a>
+											</td>
+										{% else %}
+											<td class="none-border">
+												{{ value }}
+											</td>
+										{% endif %}
+									{% endfor %}
+									<td class="none-top"><a href="{{ mobilePrefix() }}user/movie/{{ type }}?action=remove&recordId={{ history["id"] }}"><i class="fa fa-trash"></i></a></td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				{% else %}
+					{{ defaultText|_ }}
+				{% endif %}
+
+				{% partial '@_pagination' paging=paging %}
+				 
+				{% component "ad" name='ads728x90_list' %}
+			</div>
+		</div>
+	</div>
+</div>

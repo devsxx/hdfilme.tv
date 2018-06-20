@@ -1,0 +1,84 @@
+description = "Page footer"
+==
+
+
+<div id="footer">
+		<!-- Footer -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-2 col-sm-4 widget-footer desktop-display">
+			<h3 class="title">HDFILME</h3>
+			<div class="body-widget">
+				<ul class="list-unstyled">
+					<li><a href="{{url(mobilePrefix() ~ 'news')}}" title="{{ "NEUIGKEITEN"|_ }}">{{ "NEUIGKEITEN"|_ }}</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-2 col-sm-4 widget-footer desktop-display">
+			<h3 class="title">{{ "BEITRAG"|_ }}</h3>
+		</div>
+		<div class="col-md-2  col-sm-4 widget-footer desktop-display">
+			<h3 class="title">{{ "REGELUNG"|_ }}</h3>
+		</div>
+		<div class="col-md-2 col-sm-4 widget-footer desktop-display">
+			<h3 class="title">{{ "hilfe"|_ }}</h3>
+			<div class="body-widget">
+				<ul class="list-unstyled">
+					<li><a href="{{url(mobilePrefix() ~ 'contact')}}" title="{{ "Kontakt"|_ }}">
+					{{ "Kontakt"|_ }}</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-3 col-md-offset-1 col-sm-8 widget-footer text-center">
+			<h3 class="title"><img src="{{ "assets/img/logo-footer.png"|theme }}"></h3>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/bootstrap.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/slimscroll.min.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery.colorbox.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery.formatCurrency-1.4.0.min.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery.hoverIntent.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery.cluetip.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery.nst.ui.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/modernizr.custom.46884.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/jquery/jquery.rateit.js"></script>
+
+
+{% component "ad" name='footer' %}
+
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.7&appId=155814578217682";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</div>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1843677039192290');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1843677039192290&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+{% scripts %}

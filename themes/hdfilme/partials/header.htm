@@ -1,0 +1,141 @@
+description = "Content header"
+[userNav]
+==
+<?php
+	
+	function onStart ()
+	{
+		$this['time'] = time();
+	}
+
+	function doCeil ($value)
+	{
+		return ceil($value);
+	}
+?>
+==
+<!--Navigation bar-->
+
+<div id="header" class="{% if user %} 'member' {% endif %}">
+	<nav class="navbar nav-menu">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+				<a class="navbar-brand" href="{{ mobilePrefix() }}"><img src="{{ 'assets/img/logo.png'|theme }}"></a>
+			</div>
+			<div class="navbar-collapse search-bar form-search click-outside-remove-active">
+				<span class="btn-s"></span>
+				<form class="navbar-form navbar-right nav-search click-outside-remove-active" id="headerSearch" role="search" action="/movie-search" method="get">
+					<div class="form-group">
+						<input name="key" value="" id="search_t" type="text" class="ac_input autocomplete_search form-control" placeholder="{{ 'Search'|_ }}">
+					</div>
+					<button type="submit" class="btn btn-default"></button>
+					<div id="headerSearchSuggestion"></div>
+				</form>
+			</div>
+
+			{% if isMobile and user %}
+
+				<div class="dropdown click-outside-remove-active" id="notifyMessage">
+					<a href="#" data-toggle="dropdown" class="messtextcount">
+						<span class="haveNotifications hidden"></span>
+						<i class="fa fa-globe"></i>
+						<span class="sparrow-up"></span>
+					</a>
+					<ul class="dropdown-menu pull-right tn-dropdown-txt" id="user-notification-area" role="menu" aria-labelledby="dropdownMenu1">
+						
+					</ul>
+				</div>
+
+			{% endif %}
+
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<span class="btn-opacity"></span>
+				<div class="nav-inner">
+					<span class="nav-logo mobile-display">
+						<img src="{{ 'assets/img/logo-footer.png'|theme }}">
+					</span>
+					<span class="nav-title mobile-display">{{ "movieList"|_ }}</span>
+					<ul class="nav navbar-nav">
+						<li><a href="{{ url(mobilePrefix() ~ "movie-movies") }}">{{ 'Movie'|_ }}</a></li>
+						<li><a href="{{ url(mobilePrefix() ~ "movie-series") }}">{{ 'Series'|_ }}</a></li>
+						<li><a href="{{ url(mobilePrefix() ~ "movie-trailer") }}">{{ 'Trailer'|_ }}</a></li>
+					</ul>
+					<span class="nav-title mobile-display">{{ 'Account'|_ }}</span>
+
+					{% if user %}
+						<!-- login  -->
+						<div class="mobile-display mobile-user-nav">
+							{% component 'userNav' %}
+						</div>
+						<span class="nav-title mobile-display"></span>
+						<ul class="mobile-display">
+							<li><a href="{{ url(mobilePrefix() ~ 'news') }}" title="{{ 'News'|_ }}">{{ 'News'|_ }}</a></li>
+							<li><a href="{{ url(mobilePrefix() ~ 'contact') }}" title="{{ 'Contact'|_ }}">
+								{{ 'Contact'|_ }}</a></li>
+						</ul>
+
+						{% if not isMobile %}
+							<div class="tn-notif desktop-display">
+								<ul class="clearfix">
+									<li>
+										<div class="button_vip_area">
+											
+											<span class="user_vipday" title="">
+
+												<a href="{{ mobilePrefix() }}payment-list" target="_blank">
+													
+													{{ userDays() }} Days
+													<i class="fa fa-credit-card"></i>
+												</a>
+											</span>
+										</div>
+									</li>
+									
+									<li class="dropdown" id="notifyMessage">
+										<a href="#" data-toggle="dropdown" class="messtextcount">
+											<span class="haveNotifications hidden"></span>
+											<i class="fa fa-globe"></i>
+											<span class="sparrow-up"></span>
+										</a>
+										<ul class="dropdown-menu pull-right tn-dropdown-txt" id="user-notification-area" role="menu" aria-labelledby="dropdownMenu1">
+											
+										</ul>
+									</li>
+									<li class="dropdown avatarHeader">
+										<a href="#" data-toggle="dropdown"><img src="{{ user.avatar.path ?: "assets/img/default-avatar.jpg"|theme }}" onerror="this.src='{{"assets/img/default-avatar.jpg"|theme }}'" style="border-radius: 50%;" width="40" height="40" alt=""><span class="sparrow-up"></span></a>
+										{% component 'userNav' className="dropdown-menu pull-right" %}
+									</li>
+								</ul>
+							</div>
+						{% endif %}
+
+					{% else %}
+
+						<!-- not login  -->
+						<ul class="nav navbar-nav navbar-right nav-log">
+							<li>
+								<a class="" href="{{ url(mobilePrefix() ~ 'register') }}">{{ 'Register'|_ }}</a>
+							</li>
+							<li>
+								<a class="color-box-button" data-color-box-desktop-only="true" href="{{ url(mobilePrefix() ~ 'login') }}">{{ 'Login'|_ }}</a>
+								<div class="color-box-content" id="login-dialog" style="display: none;">
+									<div class="session-login bootrap-reset clearfix">
+										<h5 class="dialog-title">{{ 'Login'|_ }}</h5>
+										{% partial 'login_form' %}
+										{% partial 'login_social' %}
+									</div>
+								</div>
+							</li>
+						</ul>
+
+					{% endif %}
+				</div>
+
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+</div>
+<!--end navigation bar-->

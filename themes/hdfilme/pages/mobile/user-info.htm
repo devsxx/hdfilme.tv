@@ -1,0 +1,15 @@
+title = "User Info"
+url = "/mobile/user"
+layout = "user"
+is_hidden = 0
+
+[viewBag]
+localeUrl[de] = "/user-info"
+
+[userInfo]
+
+[session]
+security = "user"
+redirect = "login"
+==
+{% component "userInfo" %}

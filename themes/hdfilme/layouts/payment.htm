@@ -1,0 +1,44 @@
+description = "Payment"
+==
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script type="text/javascript" src="//kaidot.com/ads.js"></script>
+	{% partial 'ga' %}
+	{% partial 'head_member' %}
+	{% placeholder head %}
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row main">
+
+			{% partial "user_nav" %}
+
+			<div class="bg-main">
+				<div class="col-xs-12 col-md-12 text-center">
+					<h1 class="title">{{ "SPENDEN"|_ }}</h1>
+					<h5 class="des">{{ "Vorteile"|_ }}:</h5>
+					<div class="icon-hd">
+						<ul>
+							<li>
+								<img src="{{ "assets/img/payment/ic-1.png"|theme }}">
+								<span>{{ "Download verfügbar"|_ }}</span>
+							</li>
+							<li>
+								<img src="{{ "assets/img/payment/ic-2.png"|theme }}">
+								<span>{{ "Keine Werbung"|_ }}</span>
+							</li>
+							<li>
+								<img src="{{ "assets/img/payment/ic-3.png"|theme }}">
+								<span>{{ "Film anfragen"|_ }}</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				{% page %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

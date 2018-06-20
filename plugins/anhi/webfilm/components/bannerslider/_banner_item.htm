@@ -1,0 +1,48 @@
+<div class="item  {{ active ? 'active' : '' }} ">
+
+    <!-- banner image -->
+    <a href="{{ url(mobilePrefix() ~ movie.friendly_url ~ "-" ~ movie.id ~ "-info") }}">
+
+        <img
+            src="{{ movie.banner.path }}"
+            onerror="this.onerror=null;this.src='{{ assets }}/img/no_banner.jpg';">
+    </a>
+
+    <!-- info box -->
+    <div class="carousel-caption">
+
+        <div class="clearfix">
+
+            <div class="col-md-10 col-md-offset-2">
+                <h1 class="name"> {{ movie.name }} </h1>
+            </div>
+
+            <!-- rating and views -->
+            <div class="col-md-2 col-sm-4 review text-center">
+
+                <p>{{ 'View'|_ }}: {{ movie.view ? movie.view : 0 }}</p>
+                {% partial '@_rating' name=movie.name rate=movie.rate %}
+                <p></p>
+            </div>
+
+            <!-- descriptions -->
+            <div class="col-md-4 col-sm-8 decaption box-scro">
+                <p>{{ str_limit(movie.desc, 450, '...') }}</p>
+            </div>
+
+            <!-- actors, genres, info -->
+            <div class="col-md-4 col-sm-8 col-md-push-0 col-sm-push-4 dien-vien">
+                {% partial '@_info' movie=movie %}
+            </div>
+
+            <div class="block-button col-md-2 col-sm-3 col-md-pull-0 col-sm-pull-7">
+                <a class="btn btn-xemnow" href="{{ url(mobilePrefix() ~ movie.friendly_url ~ "-" ~ movie.id ~ "-info") }}">
+                    PLAY NOW <i class="fa fa-play-circle"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    
+</div>

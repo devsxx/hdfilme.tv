@@ -1,0 +1,5 @@
+{% for director in directors %}
+
+    <a href="{{ url(mobilePrefix() ~ "movie-director", [director.id]) }}">{{ director.director_name }} {{ loop.last ? '' : ',' }}</a>
+
+{% endfor %}

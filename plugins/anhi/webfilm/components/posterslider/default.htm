@@ -1,0 +1,71 @@
+
+<section class="box">
+
+	{% partial '@_header' type=type %}
+
+	{% component "ad" name='adsMobile320x50' %}
+	{% component "ad" name='ads728x90_list' %}
+
+	<div class="body-section">
+
+		<div id="list-movie-{{ type }}" class="carousel slide" {% if not isMobile() %} data-ride="carousel" {% endif %}>
+
+			<!-- Wrapper for slides -->
+			<div role="listbox" class="carousel-inner">
+
+				{% set break=10 %}
+				{% set page=1 %}
+
+				{% for movies in movieList %}
+
+					<!-- open tag -->
+
+					{% if not isMobile() %}
+						<div class="item {{ loop.first ? 'active' : '' }}">
+					{% endif %}
+
+					<ul class="products row">
+					{% for movie in movies %}
+
+						<li>
+							<!-- poster item -->
+							{% partial '@_poster_item' movie=movie %}
+						</li>
+
+						{% if not isMobile() %}
+
+						    {% partial "@_movie_info_popover" movie=movie %}
+
+						{% endif %}
+
+					{% endfor %}
+					</ul>
+
+					{% if not isMobile() %}
+						</div>
+					{% endif %}
+
+				{% endfor %}
+
+				{% if not isMobile() %}
+
+					<!-- Controls -->
+					<a data-slide="prev" role="button" href="#list-movie-{{ type }}" class="left carousel-btn">
+						<img src="{{assets}}/img/prew.png">
+					</a>
+					<a data-slide="next" role="button" href="#list-movie-{{ type }}" class="right carousel-btn">
+						<img src="{{assets}}/img/next.png">
+					</a>
+
+				{% endif %}
+			</div>
+
+		</div>
+
+	</div>
+
+</section>
+
+{% if not isMobile() %}
+	<script type="text/javascript" src="{{assets}}/js/poster_slider.js"></script>
+{% endif %}

@@ -1,0 +1,83 @@
+
+
+scopes:
+  
+  id:
+    label: Mã số
+    type: text
+    conditions: id = :filtered
+
+  name:
+    label: Tên
+    type: text
+    conditions: name like concat('%', :filtered, '%')
+
+  created_at:
+    label: Ngày tạo
+    type: date
+    conditions: created like concate(:filtered, '%')
+
+  update_at:
+    label: Ngày cập nhật
+    type: date
+    conditions: created like concate(:filtered, '%')
+
+  type:
+    label: Loại phim
+    type: group
+    conditions: type in (:filtered)
+    options:
+      1: Movie
+      2: Series
+      3: Traier
+
+  categories:
+    label: Thể loại
+    modelClass: Anhi\Movie\Models\Category
+    nameFrom: category_name
+    conditions: id in (select movie_id from anhi_movie_movie_category where category_id in (:filtered))
+
+  country_id:
+    label: Quốc gia
+    modelClass: Anhi\Movie\Models\Country
+    nameFrom: country_name
+    conditions: country_id in (:filtered)
+
+  server:
+    label: Server
+    conditions: server_id in (:filtered)
+    options:
+      3: 'All Server (JW)'
+      7: 'All Server (JS)'
+      12: 'FIX # TEN.PHIM'
+      13: 'All Server (Flow)'
+      14: 'Vimeo New'
+      2: Youtube
+
+  length:
+    label: Thời lượng
+    type: text
+    conditions: length = :filtered
+
+  hide:
+    label: Trạng thái
+    type: group
+    conditions: hide in (:filtered)
+    options:
+      1: Ẩn
+      0: Hiện
+
+  feature:
+    label: 'Tiêu biểu'
+    conditions: feature in (:filtered)
+    options:
+        1: Có
+        0: Không
+
+  slide:
+    label: Slide
+    type: group
+    conditions: if (:filtered = 1, slide > 0, slide = 0)
+    options:
+      1: Có
+      0: Không

@@ -1,0 +1,19 @@
+title = "Reset Password"
+url = "/activation/:code?"
+layout = "member"
+is_hidden = 0
+
+[viewBag]
+localeUrl[de] = "/reset-password"
+
+[captcha]
+
+[session]
+security = "guest"
+redirect = "home"
+
+[resetPassword]
+paramCode = "code"
+==
+
+{% partial 'pages/activation' %}

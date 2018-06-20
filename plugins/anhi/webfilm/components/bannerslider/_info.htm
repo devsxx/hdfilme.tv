@@ -1,0 +1,14 @@
+<div class="info-inner">
+    <p>{{ 'Originaltitel'|_ }}: {{  movie.english_name }} </p>
+    <p>{{ 'Year'|_ }}: {{  movie.year }} </p>
+    <p>{{ 'Length'|_ }}: {{ movie.length }} Minute</p>
+    <p>{{ 'IMDB'|_ }}: {{ movie.imdb }}</p>
+    <p>{{ 'Rating'|_ }}: {{ movie.rate }} ({{ movie.rate_count }} {{ 'Rates'|_ }})</p>
+    <p>Genre:
+        {% partial '@_genre' categories=movie.categories %}
+    </p>
+    <p>{{ 'Actors'|_ }}:
+       {% partial '@_actor' actors=movie.actors %}
+    </p>
+    
+</div>

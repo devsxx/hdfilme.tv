@@ -1,0 +1,18 @@
+{% if isVip() and download %}
+    <div class="hide">
+        <div class="box" id="movie_download">
+            <div class="header">{{ "downloadFilmHeader"|_ }}</div>
+            <div class="content" style="padding:10px;">
+                <ul class="list-link-download">
+                    {% for d in download %}
+                        <li class="item-link-download">
+                            <i class="fa fa-download"></i>
+                            {{ d["label"] }}:
+                            <a download href="{{ d["file"] }}">{{ "DOWNLOAD LINK"|_ }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endif %}

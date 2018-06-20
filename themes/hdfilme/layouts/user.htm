@@ -1,0 +1,28 @@
+description = "User Info Template"
+[userSidebar]
+[userNav]
+==
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<script type="text/javascript" src="//kaidot.com/ads.js"></script>
+	{% partial 'ga' %}
+	{% partial 'head_member' %}
+	{% placeholder head %}
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row main">
+			{% partial "user_nav" %}
+		</div>
+		<div class="row profile main">
+			<div class="col-md-3 col-sm-4">
+				{% component 'userSidebar' %}
+			</div>
+			<div class="col-md-9 col-sm-8">
+				{% page %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

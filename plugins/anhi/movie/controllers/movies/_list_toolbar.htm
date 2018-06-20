@@ -1,0 +1,51 @@
+<div data-control="toolbar">
+    <?php if ($this->user->hasAccess('movie.add')) { ?>
+        <a href="<?= Backend::url('anhi/movie/movies/create') ?>" class="btn btn-primary oc-icon-plus"><?= e(trans('backend::lang.form.create')) ?></a>
+    <?php } ?>
+
+    <?php if ($this->user->hasAccess('movie.delete')) { ?>
+        <button
+            class="btn btn-default oc-icon-trash-o"
+            disabled="disabled"
+            onclick="$(this).data('request-data', {
+                checked: $('.control-list').listWidget('getChecked')
+            })"
+            data-request="onDelete"
+            data-request-confirm="<?= e(trans('backend::lang.list.delete_selected_confirm')) ?>"
+            data-trigger-action="enable"
+            data-trigger=".control-list input[type=checkbox]"
+            data-trigger-condition="checked"
+            data-request-success="$(this).prop('disabled', true)"
+            data-stripe-load-indicator>
+            <?= e(trans('backend::lang.list.delete_selected')) ?>
+        </button>
+    <?php } ?>
+
+         <!-- <button id='cache-button' style="background-color: #e61b1b"
+            onclick="
+
+                $('#cache-button').prop('disabled', 'disabled')
+
+                $('button.cancel').on('click', function () {
+                    $('#cache-button').prop('disabled', false)
+                })
+
+                $(this).request('onBuildCache', {
+                    confirm: 'This action could take time. Continue?',
+                    complete: function (data) {
+                        $('#cache-button').prop('disabled', false)
+                    },
+                    loading: '#cache-loading-icon'
+                })
+            " 
+            class="btn btn-primary oc-icon-building">
+            (Re-)Build Cache
+        </button>
+
+
+        <div id="cache-loading-icon" style="display: none;" class="loading-indicator-container">
+            <div class="loading-indicator size-small">
+                <span></span>
+            </div>
+        </div> -->
+</div>

@@ -1,0 +1,28 @@
+fields:
+    to:
+        label: 'Nhóm người dùng'
+        span: auto
+        type: dropdown
+        options:
+            vip: 'VIP'
+            member: 'Thành viên thường'
+            all: 'Tất cả'
+    title:
+        label: 'Tiêu đề'
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: text
+    content:
+        label: 'Nội dung'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: textarea
+    redirect_url:
+        label: 'Redirect url'
+        required: 1
+        span: auto
+        oc.commentPosition: ''
+        type: text

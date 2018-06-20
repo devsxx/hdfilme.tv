@@ -1,0 +1,10 @@
+name: AdController
+form: $/anhi/advertisement/models/ad/fields.yaml
+modelClass: Anhi\Advertisement\Models\Ad
+defaultRedirect: anhi/advertisement/adcontroller
+create:
+    redirect: 'anhi/advertisement/adcontroller/update/:id'
+    redirectClose: anhi/advertisement/adcontroller
+update:
+    redirect: anhi/advertisement/adcontroller
+    redirectClose: anhi/advertisement/adcontroller

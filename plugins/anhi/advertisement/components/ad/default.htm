@@ -1,0 +1,25 @@
+
+ 		{% if adObj and adObj.active %}
+
+				{% if isMobile() %}
+
+	 				{% if adObj.mobile %}
+						<div style="text-align: center;position: relative;">
+					 		<div style="display: inline-block;">{{ adObj.html|raw }}</div>
+						</div>
+					{% endif %}
+
+				{% else %}
+
+					{% if not adObj.mobile %}
+						<div style="text-align: center;position: relative;">
+					 		<div style="display: inline-block;">{{ adObj.html|raw }}</div>
+						</div>
+					{% endif %}
+
+				{% endif %}
+
+		
+		{% else %}
+
+		{% endif %}

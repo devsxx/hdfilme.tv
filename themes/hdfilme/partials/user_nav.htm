@@ -1,0 +1,26 @@
+[userNav]
+==
+<div class="navbar-menu">
+	<div class="col-xs-6 col-md-8 col-lg-8">
+		<div class="logo">
+			<a href="{{mobilePrefix()}}">
+				<img src="{{ "assets/img/logo.png"|theme }}" class="img-responsive">
+			</a>
+		</div>
+	</div>
+	<div class="upload_single_image col-xs-6 col-md-4 col-lg-4 text-right">
+		<div class="avatar upload_complete click-outside-remove-active">
+			<a href="javascript: void(0)" data="" title="Hình đại diện" onclick="backPage('cap-nhat-thong-tin')"><img src="{{ user.avatar.path ?: "assets/img/default-avatar.jpg"|theme }}"></a>
+			<a href="{{ url(mobilePrefix() ~ 'user') }}" data="" title="" class="username">
+				{{ user.email }}
+			</a>
+			<span class="glyphicon glyphicon-chevron-down pull-right arr-down"></span>
+			<div class="user-section">
+				<div class="tip-dropdown">
+					<span class="arr-top"></span>
+					{% component "userNav" className="nav" %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

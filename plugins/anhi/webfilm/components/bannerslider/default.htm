@@ -1,0 +1,74 @@
+<section id="slide-home-wrapper" class="box">
+
+    <div class="container" style="margin-bottom: 10px;">
+
+        <div id="slide-home" class="carousel slide" data-ride="carousel">
+        
+            <!-- list of banner items -->
+            <div class="carousel-inner" role="listbox">
+
+               	{% for film in films %}
+
+               		{% partial '@_banner_item.htm' movie=film active=loop.first %}
+
+               	{% endfor %}
+
+            </div>
+
+            <!-- pre button -->
+            <a class="left carousel-btn" href="#slide-home" role="button" data-slide="prev">
+                <img src="{{ assets }}/img/prew.png">
+            </a>
+
+            <!-- next button -->
+            <a class="right carousel-btn" href="#slide-home" role="button" data-slide="next">
+                <img src="{{ assets }}/img/next.png">
+            </a>
+
+            <!-- circle indicator -->
+            <ol class="carousel-indicators">
+
+                {% for film in films %}
+
+                    <li data-target="#slide-home" data-slide-to="{{ loop.index0 }}" class="{{ loop.first ? 'active' : '' }}"></li>
+
+                {% endfor %}
+            </ol>
+
+        </div>
+
+        {% if not isMobile() %}
+
+            <script type="text/javascript">
+
+                $(document).ready(function() {
+
+                    var hoverTimeout;
+
+                    $(".carousel-inner").hover(function() {
+
+                        if (hoverTimeout) {
+                            clearTimeout(hoverTimeout);
+                        }
+
+                        $( this ).find(".carousel-caption").slideDown();
+
+                    }, function() {
+
+                        hoverTimeout = setTimeout(function () {
+
+                             $(".carousel-inner").find(".carousel-caption").slideUp();
+                             
+                        }, 3000);
+
+                    });
+                
+                });
+
+            </script>
+
+        {% endif %}
+
+    </div>
+
+</section>

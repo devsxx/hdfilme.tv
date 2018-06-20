@@ -1,0 +1,62 @@
+<!-- player session - begin -->
+<div class="video row">
+    {% component "ad" name='ads160x600_watch' %}
+    <!-- Javascript -->
+    <script type="text/javascript">
+        var site_name = 'HDfilme.TV - Kino stream HD';
+    </script>
+    <script src="{{ "assets/jwplayer-7.12.8/jwplayer-ads.js"|theme }}"></script>
+    <script src="{{ assets }}/js/movie_player.js?v=1.8"></script>
+    <!--<script>jwplayer.key = "PiCEV3JueypzgA3JrM+ouD/F07aCMucUtqL/kPlm8Ek=";</script>-->
+
+    
+    <div class="film-screen-wrapper">
+        <!-- <div style="color: red; font-size: 16px">Streaming system is under mantainance. Please come back after 48 hours. We are sorry for this inconvenience. </div> -->
+        <div class="film-screen-inner">
+
+        {% if type == "stream" %}
+
+            <div id="mediaplayer" class="mediaplayer videoplayer no-poster film-screen-content" data-volume="high" data-state="idle" data-tracks="many" data-useractivity="false">
+                <div id="my-video"></div>
+
+                {% if not isVip() %}
+
+                    {% set linkVip = '' %}
+                    {% set linkTrigger = '' %}
+
+                    {% if not user %}
+                        <!-- if guest -->
+                        {% set linkVip = url('/login') %}
+                        {% set linkTrigger = 'popupLogin' %}
+                    
+                    {% else %}
+
+                        <!-- # normal member -->
+                        {% set linkVip = url('/payment-list') %}
+                        {% set linkTrigger = 'popupPayment' %}
+
+                    {% endif %}
+
+                {% endif %}
+               
+                <script type="text/javascript">
+                    initPlayer(
+                        "{{ movie.id }}",
+                        "{{ currentEpisode }}",
+                        {{ isVip() ? "true" : "false" }},
+                        "{{ linkTrigger }}",
+                        "{{ linkVip }}"
+                    )
+                </script>
+                <img id="whosamung" src="http://whos.amung.us/swidget/9h3iw4gl8y4k.png" width="0" height="0" alt="User Online" />
+            </div>
+        {% else %}
+
+            <iframe class="film-screen-content" width="100%" height="100%" frameborder="0" allowfullscreen="" src="{{ movie["demo_link"] }}?&autohide=1&fs=1&modestbranding=1&iv_load_policy=3&rel=0&showinfo=0&version=2&hd=0&fs=0&enablejsapi=1&playerapiid=ytplayer&autoplay=1&loop=1"></iframe>
+
+        {% endif %}
+
+        </div>
+    </div>
+
+</div>

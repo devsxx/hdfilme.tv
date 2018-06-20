@@ -1,0 +1,56 @@
+<div class="profile-content">
+	<div id="personal-info-pf" class="col-lg-9 col-md-12 col-sm-12 col-xs-12 personal-info">
+		<!-- Message -->
+		{% if registrationSuccess %}
+			<div style="margin-bottom: 50px">
+				<h3>{{ "Benutzerinfo"|_ }}</h3>
+				<p>
+					{{ "userSuccessMessage1"|_ }}
+					<b>{{ registrationSuccess }}</b>
+					{{ "userSuccessMessage2"|_ }}
+				</p>
+			</div>
+		{% endif %}
+
+		<h3>{{ "userInfo"|_ }}</h3>
+		<div class="form-horizontal">
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ 
+				"email"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					{{ user.email }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Vip"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					<a class="user-link" href="{{ url('/payment-list') }}">{{"userRenew"|_}}</a>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Name"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					{{user.name}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Sprache"|_ }}</label>
+				<div class="col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					{{ "langGermany"|_ }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Mitglied von"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					{{ created }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-5 col-md-3 col-sm-3 col-xs-3 col-xxs-12 control-label">{{ "Letzter einloggen"|_ }}</label>
+				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-8 col-xxs-12">
+					{{ user.last_login }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

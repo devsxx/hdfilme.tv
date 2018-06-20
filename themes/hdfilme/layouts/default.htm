@@ -1,0 +1,46 @@
+description = "default layout"
+[ad]
+[antiblock]
+==
+<?php
+
+	function onStart ()
+	{
+		Helper::sendVIPExpireNotification();
+	}
+
+	function url ($url)
+	{
+        return Helper::url($url);
+    }
+?>
+==
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% partial 'ga' %}
+		<script type="text/javascript" src="{{ [
+
+			'@jquery'
+
+		]|theme }}"></script>
+
+		{% partial "head" %}
+		{% placeholder head %}
+		{% styles %}
+	</head>
+<body>
+<meta name="hydrax-site-verification" content="49e4b99fb6eace6899644c36cbe72de7" />
+    <!--header navigation-->
+	<script type="text/javascript" src="https://space-cdn.kodrive.xyz/static/e/ID19/js/kodhe.cdn-util.js" ></script>
+    <script type="text/javascript" src="https://space-cdn.kodrive.xyz/static/e/ID17/js/loader.js?customer=demo" ></script>
+	{% partial "header"%}
+	
+   	<div id="main">
+		{% page %}
+    </div>
+	<!--main-->
+    {% partial "footer" %}
+</body>
+
+</html>

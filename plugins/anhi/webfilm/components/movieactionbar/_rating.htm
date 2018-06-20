@@ -1,0 +1,20 @@
+<div title="{{info["name"]}}" class="star-rating" style="display: inline-block;">
+
+    <div class="rateit " data-rateit-value="{{info["rate"]}}" data-rateit-ispreset="true" data-rateit-readonly="false" data-url="{{ url("movie/raty/" ~ info["id"]) }}"
+    {% if not user %} onclick="popupLogin('{{url(mobilePrefix() ~ 'login')}}')" data-prevent-rate="true" {% endif %}></div>
+
+    <b>{{info["rate"]}}</b> <i>({{info["rate_count"]}} {{ "rateCount"|_ }})</i>
+    
+</div>
+
+<div class="rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+    <div class="rate-star">
+        <span itemprop="ratingValue" style="display: none">{{ info["rate"] }}</span>
+        <span itemprop="ratingCount" style="display: none">{{ info["rate_count"] }}</span>
+        <span itemprop="bestRating" style="display: none">5</span>
+        <span itemprop="worstRating" style="display: none">0</span>
+        <span itemprop="reviewCount" style="display: none">{{info["rate_count"]}}</span>
+        <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Product">
+        </div>
+    </div>
+</div>

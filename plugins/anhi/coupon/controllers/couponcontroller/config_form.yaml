@@ -1,0 +1,10 @@
+name: CouponController
+form: $/anhi/coupon/models/couponcode/fields.yaml
+modelClass: Anhi\Coupon\Models\CouponCode
+defaultRedirect: anhi/coupon/couponcontroller
+create:
+    redirect: 'anhi/coupon/couponcontroller/update/:id'
+    redirectClose: anhi/coupon/couponcontroller
+update:
+    redirect: anhi/coupon/couponcontroller
+    redirectClose: anhi/coupon/couponcontroller

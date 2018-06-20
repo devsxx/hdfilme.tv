@@ -1,0 +1,23 @@
+scopes:
+  
+  user_email:
+    label: Thành viên
+    type: text
+    conditions: user_email like concat('%', :filtered, '%')
+    
+  status:
+    label: Tình trạng
+    type: group
+    conditions: status in (:filtered)
+    options:
+      0: Chưa xử lý
+      1: Đã xử lý
+
+  movie_type:
+    label: Loại phim
+    type: group
+    conditions: movie_type in (:filtered)
+    options:
+      1: Phim lẻ
+      2: Series
+      3: Trailer

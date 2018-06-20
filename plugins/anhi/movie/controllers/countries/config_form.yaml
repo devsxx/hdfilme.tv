@@ -1,0 +1,10 @@
+name: Countries
+form: $/anhi/movie/models/country/fields.yaml
+modelClass: Anhi\Movie\Models\Country
+defaultRedirect: anhi/movie/countries
+create:
+    redirect: 'anhi/movie/countries/update/:id'
+    redirectClose: anhi/movie/countries
+update:
+    redirect: anhi/movie/countries
+    redirectClose: anhi/movie/countries

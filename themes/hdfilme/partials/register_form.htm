@@ -1,0 +1,78 @@
+[captcha]
+==
+function onStart ()
+{
+	$this['email'] = Input::old('email');
+
+	$this['name'] = Input::old('name');
+}
+==
+<div class="row form-confirm-cas box-note">
+	<div class="">
+		<div class="form-login confirm">
+			<form id="form_register" action="{{ url(mobilePrefix() ~ 'register') }}" method="post">
+				<div class="row row-title">
+					<div class="col-xs-12">
+						<label for="email">{{ "Email"|_ }}:</label>
+					</div>
+				</div>
+				<div class="row col-md-10">
+					<input value="{{ email }}" placeholder="{{ "Email"|_ }}" name="email" class="form-control" id="email" type="text" class="t-input">
+					{% if errors.has('email') %}
+					<p class="message red-alert">{{ errors.first("email") }}</p>
+					{% endif %}
+				</div>
+				<div class="row row-title">
+					<div class="col-xs-12">
+						<label for="password">{{ "Password"|_ }}:</label>
+					</div>
+				</div>
+				<div class="row col-md-10">
+					<input placeholder="{{ "Password"|_ }}" name="password" class="form-control" id="password" type="password" title="Passwort muss mindestens 6 Zeichen lang sein">
+					{% if errors.has('password') %}
+					<p class="message red-alert">{{errors.first("password")}}</p>
+					{% endif %}
+				</div>
+				<div class="row row-title">
+					<div class="col-xs-12">
+						<label for="password_repeat">{{ "Kennwort wiederholen"|_ }}:</label>
+					</div>
+				</div>
+				<div class="row col-md-10">
+					<input placeholder="{{ "Kennwort wiederholen"|_ }}" name="password_confirmation" class="form-control" id="password_repeat" type="password" class="t-input">
+					{% if errors.has('password_confirmation') %}
+					<p class="message red-alert">{{errors.first('password_confirmation')}}</p>
+					{% endif %}
+				</div>
+				<div class="row row-title">
+					<div class="col-xs-12">
+						<label for="name">{{ "Name"|_ }}:</label>
+					</div>
+				</div>
+				<div class="row col-md-10">
+					<input value="{{ name }}" placeholder="{{ "Name"|_ }}" name="name" id="name" class="form-control" type="text" class="t-input">
+				</div>
+				<div class="row row-title">
+					<div class="col-xs-12">
+						<label for="security_code">@lang("messages.captcha"):</label>
+					</div>
+				</div>
+				<div class="row col-md-10">
+					{% flash %}
+				 		{{ "Please tick the reCaptcha box to say you are human"|_ }}
+				 	{% endflash %}
+					{% component 'captcha' %}
+				</div>
+				<div class="col-md-10 radio-text clearfix">
+					<label class="checkbox checkbox-float">
+						<input type="checkbox" class="text-nomarl" name="rule" id="param_rule" checked>
+						{{ "I acept the terms and policy."|_ }}
+					</label>
+				</div>
+				<div class="row col-md-10">
+					<input class="buttonM bGreen btn-block" value="{{ "Registrieren"|_ }}" type="submit">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+
+<div class="box-product clearfix" data-popover="movie-data-popover-{{ movie.id }}">
+
+    <a href="{{ url(mobilePrefix() ~ movie.friendly_url ~ "-" ~ movie.id ~ "-info") }}">
+
+        <img
+            class="img"
+            src="{{ movie.poster.thumb }}"
+            onerror="this.src='{{ "assets/img/default_thumb.jpg"|theme }}'"
+            alt="{{ movie.name }}">
+    </a>
+
+    {% if movie.feature %}
+        <span class="hot"></span>
+    {% endif %}
+
+    {% if movie.type == 2 and movie.episode_current and movie.episode_total %}
+        <div class="episode">{{ movie.episode_current }} / {{ movie.episode_total }}</div>
+    {% endif %}
+
+
+    <div class="decaption">
+
+        <h3 class="title-product">
+            <a href="{{ url(mobilePrefix() ~ movie.friendly_url ~ "-" ~ movie.id ~ "-info") }}">
+                {{ movie.name }}
+            </a>
+        </h3>
+
+        <span class="view-product">{{ 'View'|_ }} : {{ movie.view ? movie.view : 0 }}</span> 
+        <span class="quality-product">{{ movieQuality(movie.quality) }}</span>
+        {% if movie.audio != 0 %}
+            <span class="quality-product">MIC</span>
+        {% endif %}
+
+    </div>
+
+    <div class="clear"></div>
+
+
+    {% if removeLink %}
+    <div class="textC" style="color:#333; margin:5px 0 ;">
+        <a href="{{ removeLink }}" style="color:red;" title="">
+            <b>{{ "Von der Liste entfernen"|_ }}</b>
+        </a>
+    </div>
+    {% endif %}
+    
+
+    <a href="{{ url(mobilePrefix() ~ movie.friendly_url ~ "-" ~ movie.id ~ "-info") }}">
+        <span class="over_play"></span>
+    </a>
+
+</div>
+

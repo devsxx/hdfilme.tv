@@ -1,0 +1,31 @@
+columns:
+    id:
+        label: ID
+        type: number
+    package_name:
+        label: 'Tên gói'
+        type: text
+    paygate:
+        label: 'Cổng thanh toán'
+        type: text
+        sortable: false
+        relation: paygate
+        valueFrom: paygate_name
+    price:
+        label: 'Giá tiền'
+        type: number
+    days:
+        label: 'Số ngày'
+        type: number
+    description:
+        label: 'Mô tả'
+        type: text
+    active:
+        label: 'Trạng thái'
+        type: switch
+    created_at:
+        label: 'Ngày tạo'
+        type: datetime
+    updated_at:
+        label: 'Ngày cập nhật'
+        type: datetime

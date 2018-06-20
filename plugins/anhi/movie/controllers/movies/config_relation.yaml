@@ -1,0 +1,20 @@
+links:
+    label: Tập phim
+    view:
+        list: $/anhi/movie/models/movielink/columns.yaml
+        toolbarButtons: create|delete
+        recordsPerPage: 10
+    manage:
+        form: $/anhi/movie/models/movielink/fields.yaml
+
+tags:
+    label: Tags
+    manage:
+        list: $/anhi/movie/models/tag/columns.yaml
+        form: $/anhi/movie/models/tag/fields.yaml
+        recordsPerPage: 10
+        showSearch: true
+    view:
+        list: $/anhi/movie/models/tag/columns.yaml
+        toolbarButtons: create|add|remove|delete
+        recordsPerPage: 10

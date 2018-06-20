@@ -1,0 +1,5 @@
+<select class="select2" name="<?= $name ?>" style="width: 100%" <?= $multiple ? 'multiple' : '' ?> >
+<?php foreach ($list as $key => $item): ?>
+    <option value="<?= $key ?>" selected><?= $item ?></option>
+<?php endforeach ?>
+</select>

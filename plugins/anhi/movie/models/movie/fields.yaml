@@ -1,0 +1,238 @@
+fields:
+    link_filmstart:
+        label: 'Link filmstart.de'
+        type: film_starts
+        span: auto
+    id:
+        label: 'Mã số'
+        oc.commentPosition: ''
+        span: auto
+        disabled: 1
+        type: number
+    created_at:
+        label: 'Ngày tạo'
+        oc.commentPosition: ''
+        mode: datetime
+        span: auto
+        disabled: 1
+        type: datepicker
+    updated_at:
+        label: 'Ngày cập nhật'
+        oc.commentPosition: ''
+        mode: datetime
+        span: auto
+        disabled: 1
+        type: datepicker
+    poster:
+        label: Poster
+        oc.commentPosition: ''
+        mode: image
+        imageWidth: '80'
+        imageHeight: '80'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    banner:
+        label: Banner
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        imageWidth: '500'
+        type: fileupload
+    name:
+        label: Tên
+        required: 1
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    english_name:
+        label: 'Tên tiếng anh'
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: text
+    categories:
+        label: 'Thể loại'
+        span: auto
+        modelName: Category
+        nameFrom: category_name
+        type: select2box
+    type:
+        label: 'Loại phim'
+        oc.commentPosition: ''
+        options:
+            1: Movie
+            2: Series
+            3: Trailer
+        span: auto
+        type: dropdown
+    country_id:
+        label: 'Quốc gia'
+        span: auto
+        modelName: Country
+        multiple: false
+        nameFrom: country_name
+        type: select2box
+    server_id:
+        label: Server
+        oc.commentPosition: ''
+        options:
+            3: 'All Server (JW)'
+            2: Youtube
+            7: 'All Server (JS)'
+            12: 'FIX # TEN.PHIM'
+            13: 'All Server (Flow)'
+            14: 'Vimeo New'
+        span: auto
+        type: dropdown
+    length:
+        label: 'Thời lượng'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    imdb:
+        label: 'Điểm IMDB'
+        oc.commentPosition: ''
+        span: auto
+        default: '0'
+        type: number
+    year:
+        label: 'Năm phát hành'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    episode_total:
+        label: 'Tổng số tập'
+        oc.commentPosition: ''
+        span: auto
+        default: '1'
+        required: 1
+        type: number
+    episode_current:
+        label: 'Tập hiện tại'
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        default: '1'
+        type: number
+    quality:
+        label: 'Chất lượng phim'
+        oc.commentPosition: ''
+        options:
+            2: HD
+            0: Cam
+            1: SD
+            3: 'BLURAY 1080P'
+            4: 'BLURAY 720P'
+            5: 'HD WEB'
+            6: Hard-sub
+            7: TS
+        span: auto
+        type: dropdown
+    audio:
+        label: 'Chất lượng Audio'
+        oc.commentPosition: ''
+        options:
+            - Không
+            - Mic
+        span: auto
+        type: dropdown
+    directors:
+        label: 'Đạo diễn'
+        span: auto
+        modelName: Director
+        nameFrom: director_name
+        type: select2box
+    actors:
+        label: 'Diễn viên'
+        span: auto
+        modelName: Actor
+        nameFrom: actor_name
+        type: select2box
+    producers:
+        label: 'Nhà sản xuất'
+        span: auto
+        modelName: Producer
+        nameFrom: producer_name
+        type: select2box
+    demo_link:
+        label: 'Trailer link'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    desc:
+        label: 'Giới thiệu phim'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    friendly_url:
+        label: 'Seo url'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    site_title:
+        label: 'Seo title'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    meta_desc:
+        label: 'Meta description'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    meta_key:
+        label: 'Meta keywords'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    onTop:
+        label: 'Đánh đấu lên top'
+        span: auto
+        default: 0
+        type: switch
+    slide:
+        type: partial
+        span: right
+        path: ~/plugins/anhi/movie/models/movie/_slide.htm
+    hide:
+        label: Ẩn
+        default: 0
+        span: auto
+        type: switch
+    cinema:
+        label: 'Phim chiếu rạp'
+        span: left
+        default: 1
+        type: switch
+    feature:
+        label: 'Tiêu biểu'
+        default: 0
+        span: left
+        type: switch
+    tags:
+        label: Tags
+        span: auto
+        type: partial
+        path: field_tags
+    links:
+        label: 'Tập phim'
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: partial
+        path: field_episodes
+    episodes:
+        label: 'Nhập nhiều tập'
+        mode: file
+        useCaption: true
+        span: left
+        placeholder: 'Vui lòng nhập theo định dạng: Tập, link, Tên tập, số phút'
+        type: textarea

@@ -1,0 +1,106 @@
+description = "Head"
+[ad]
+==
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript">
+    themeUrl = "{{"assets"|theme}}";
+</script>
+<link rel="alternate" href="http://hdfilme.tv/" hreflang="de-DE"/>
+<meta property="fb:pages" content="341329632726380"/>
+<meta name="robots" content="index,follow"/>
+<link rel="stylesheet" href="/themes/hdfilme/assets/css/css.css" type="text/css"/>
+<link rel="shortcut icon" href="/themes/hdfilme/assets/icon.ico" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="/themes/hdfilme/assets/jquery/jquery-ui-1.8.21.custom.css" media="screen"/>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/themes/hdfilme/assets/jquery/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/themes/hdfilme/assets/css/font-awesome.css">
+
+<link rel="stylesheet" type="text/css" href="/themes/hdfilme/assets/jquery/jquery.colorbox.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="/themes/hdfilme/assets/jquery/jquery.cluetip.css" media="all"/>
+<link href="/themes/hdfilme/assets/froala_editor_2.3.5/css/froala_editor.min.css" rel="stylesheet" type="text/css" />
+<link href="/themes/hdfilme/assets/froala_editor_2.3.5/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/char_counter.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/code_view.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/colors.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/emoticons.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/file.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/fullscreen.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/image.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/image_manager.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/line_breaker.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/quick_insert.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/table.css">
+<link rel="stylesheet" href="/themes/hdfilme/assets/froala_editor_2.3.5/css/plugins/video.css">
+
+{% if isMobile() %}
+	<link rel="stylesheet" type="text/css" href="/themes/hdfilme/assets/css/style_mobile.css">
+{% else %}
+	<link rel="stylesheet" type="text/css" href="/themes/hdfilme/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/themes/hdfilme/assets/css/responsive.css">
+{% endif %}
+<link rel="stylesheet" href="/themes/hdfilme/assets/jquery/jquery.rateit.css"/>
+<script type="text/javascript" src="{{ 'assets/jquery/jquery.min.js'|theme }}"></script>
+
+{% component "ad" name='antiblock' %}
+
+<script type="text/javascript">
+	var site_url = 'http://hdfilme.tv/';
+	var base_url = 'http://hdfilme.tv/';
+	var public_url = 'http://hdfilme.tv/public/';
+	var isMobileDevice = {% if isMobile %} true {% else %} false {% endif %};
+
+	var isMember = {% if user %} true {% else %} false {% endif %};
+
+	var globalVars={};
+	//config variable
+	globalVars.constants = {
+		"breakpointTablet":1024,
+		"breakpointMobile":676
+	};
+	//message variable
+	globalVars.resources = {
+		"mustLogin":"Bitte logge dich ein um dieses Feature zu nutzen!",
+		"vipTryPayment":"Dieses Feature ist nur für Spendenmitglieder, vielleicht ausprobieren?",
+		"movieActor":"Schauspieler",
+		"film":"Filme",
+		"tvShow":"Serien",
+		"showMore":"Mehr Ergebnisse",
+		"resumeConfirm":"Do you want to resume?",
+		"yes":"Yes",
+		"no":"No",
+		"buyVip": "Spenden",
+		"buyVipMessage": "Vorteile:",
+		"benefit1": "Download verfügbar",
+		"benefit2": "Keine Werbung",
+		"benefit3": "Film anfragen",
+		"benefit4": "Schneller Support"
+	};
+
+	//urls variable
+	globalVars.urls = {
+		"login":"{{url('/login')}}",
+		"miniThumb":"{{ "assets/img/default_thumb.jpg"|theme }}",
+		"payment-list":"{{url('/payment-list')}}",
+		"webNotifCount":"{{url('/notification/web/new')}}",
+		"webNotifList":"{{url('/notification/web')}}",
+		"homepage":"/"
+	};
+</script>
+
+
+{% if not isMobile %}
+
+	<script type="text/javascript" src="/themes/hdfilme/assets/js/slide_ma.js"></script>
+	<script type="text/javascript" src="/themes/hdfilme/assets/js/slide_lenhgoi.js"></script>
+
+{% endif %}
+
+<script type="text/javascript" src="/themes/hdfilme/assets/js/common.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/js/events.js?v=1.3"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/js/main.js?v=1.3"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/js/notification.js?v=1.4"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/js/search.js?v=1.6"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/js/third-parties.js"></script>
+<script type="text/javascript" src="/themes/hdfilme/assets/js/hdfilme.js"></script>
+<link rel="stylesheet" href="/themes/hdfilme/assets/css/my-custom.css">

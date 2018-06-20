@@ -1,0 +1,10 @@
+name: Paygate
+form: $/anhi/payment/models/paygate/fields.yaml
+modelClass: Anhi\Payment\Models\Paygate
+defaultRedirect: anhi/payment/paygate
+create:
+    redirect: 'anhi/payment/paygate/update/:id'
+    redirectClose: anhi/payment/paygate
+update:
+    redirect: anhi/payment/paygate
+    redirectClose: anhi/payment/paygate

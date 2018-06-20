@@ -1,0 +1,32 @@
+columns:
+    id:
+        label: 'Mã số'
+        type: number
+        searchable: true
+    name:
+        label: Phim
+        type: partial
+        searchable: true
+        path: ~/plugins/anhi/movie/models/movie/_name.htm
+    type:
+        label: 'Loại phim'
+        type: movietype
+    server_id:
+        label: Server
+        type: servertype
+    length:
+        label: 'Thời lượng'
+        type: number
+    created_at:
+        label: 'Ngày tạo'
+        type: date
+    updated_at:
+        label: 'Ngày cập nhật'
+        type: date
+    actions:
+        label: 'Hành động'
+        type: partial
+        clickable: false
+        path: ~/plugins/anhi/movie/models/movie/_actions.htm
+        searchable: false
+        sortable: false

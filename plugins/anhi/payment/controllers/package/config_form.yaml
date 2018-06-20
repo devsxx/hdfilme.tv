@@ -1,0 +1,10 @@
+name: Package
+form: $/anhi/payment/models/paymentpackages/fields.yaml
+modelClass: Anhi\Payment\Models\PaymentPackages
+defaultRedirect: anhi/payment/package
+create:
+    redirect: 'anhi/payment/package/update/:id'
+    redirectClose: anhi/payment/package
+update:
+    redirect: anhi/payment/package
+    redirectClose: anhi/payment/package

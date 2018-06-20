@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: ID
+        type: number
+    name:
+        label: Name
+        type: text
+        searchable: true
+    html:
+        label: Html
+        type: text
+    mobile:
+        label: 'For Mobile'
+        type: switch
+    active:
+        label: Active
+        type: switch
+    created_at:
+        label: 'Created at'
+        type: date
+    updated_at:
+        label: 'Updated at'
+        type: date

@@ -1,0 +1,15 @@
+title = "Film List"
+url = "/:type|(movie\-trailer)\b|(movie\-movies)\b|(movie\-series)\b|(movie\-search)\b|(movie\-actor)\b|(movie\-director)\b/:id?|\d+"
+layout = "default"
+is_hidden = 0
+
+[movieList]
+[sidebar]
+
+[viewBag]
+localeUrl[de] = "/film-list"
+
+[session]
+security = "all"
+==
+{% partial 'pages/film-list' %}

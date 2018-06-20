@@ -1,0 +1,10 @@
+name: Notification
+form: $/anhi/movie/models/notification/fields.yaml
+modelClass: Anhi\Movie\Models\Notification
+defaultRedirect: anhi/movie/notification
+create:
+    redirect: 'anhi/movie/notification/update/:id'
+    redirectClose: anhi/movie/notification
+update:
+    redirect: anhi/movie/notification
+    redirectClose: anhi/movie/notification

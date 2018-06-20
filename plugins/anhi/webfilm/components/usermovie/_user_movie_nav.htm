@@ -1,0 +1,18 @@
+<div class="mt30 mb30 click-outside-remove-active">
+	<a href="javascript:void(0)" class="list-group-item uppercase p-upper toggle-parent" style="color: #68c939;text-transform: uppercase;">
+		<b>{{ "Deine Filme"|_ }}</b>
+	</a>
+	<a class="list-group-item {{ type=="favorite" ? "active" : ''}}" href="{{ url(mobilePrefix() ~ 'user/movie/favorite') }}">
+		{{ "Favoriten"|_ }}
+	</a>
+	<a class="list-group-item {{ type=="watch-later" ? "active" : ''}}" href="{{ url(mobilePrefix() ~ 'user/movie/watch-later') }}">
+		{{ "Später ansehen"|_ }}
+	</a>
+	<a class="list-group-item {{ type=="report" ? "active" : ''}}" href="{{ url(mobilePrefix() ~ 'user/movie/report') }}">
+		{{ "Meldeliste"|_ }}
+	</a>
+	<a class="list-group-item {{ type=="request" ? "active" : ''}}" href="{{ url(mobilePrefix() ~ 'user/movie/request') }}">
+		{{ "Anforderungsliste"|_ }}
+	</a>
+</div>
+

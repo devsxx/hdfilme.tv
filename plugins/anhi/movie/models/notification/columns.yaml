@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: 'Mã số'
+        type: number
+    to:
+        label: Đến
+        type: number
+    title:
+        label: 'Tiêu đề'
+        type: text
+    content:
+        label: 'Nội dung'
+        type: text
+    redirect_url:
+        label: 'Redirect url'
+        type: text

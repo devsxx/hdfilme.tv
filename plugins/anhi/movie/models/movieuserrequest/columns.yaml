@@ -1,0 +1,20 @@
+columns:
+    id:
+        label: 'Mã số'
+        type: number
+    link:
+        label: 'Đường dẫn'
+        type: text
+    date_add:
+        label: 'Ngày yêu cầu'
+        type: datetime
+    user_email:
+        label: 'Thành viên'
+        type: text
+    actions:
+        label: 'Process link'
+        type: partial
+        clickable: false
+        path: ~/plugins/anhi/movie/models/movieuserrequest/_actions.htm
+        searchable: false
+        sortable: false

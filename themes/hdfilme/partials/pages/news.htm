@@ -1,0 +1,35 @@
+{% put head %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="title" content="HDfilme.TV - Kino stream HD"/>
+	<meta name="description" content="Hdfilme.TV - Kino stream HD - Kostenlos HD Filme und Serien online  anschauen."/>
+	<meta name="keywords" content="HD stream, kino stream, kino stream HD, filme online, filme online HD, Serien online HD"/>
+	<title>HDfilme.TV - Kino stream HD</title>
+{% endput %}
+
+<!--main content-->
+<div class="box">
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="main col-md-9">
+
+			{% component "news" %}
+
+			</div>
+
+			{% if not isMobile %}
+
+				<div class="col-md-3 sidebar">
+
+					{% component "sidebar" %}
+
+				</div>
+
+			{% endif %}
+		</div>
+
+	</div>
+
+</div>

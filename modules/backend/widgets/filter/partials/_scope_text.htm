@@ -1,0 +1,48 @@
+    
+    <div style="display: inline-block; padding: 1% 0 1% 0.5%">
+
+    	<label style="color: rgba(0,0,0,0.6)"><?= e(trans($scope->label)) ?>: </label>
+
+	    
+
+    	<div class="loading-indicator-container" style="display: inline-flex;">
+
+    		<input
+		    	type="text"
+		    	id="<?= $scope->getId() ?>"
+		    	value="<?= $scope->value ?>"
+		    	class="form-control"
+		    	placeholder="<?= isset($scope->config['placeholder']) ? $scope->config['placeholder'] : '' ?>"
+		    	style="float: left;"/>
+
+
+		    <div id="<?= $scope->getId() . '-loader' ?>" class="loading-indicator size-small" style="display: none; background: none; right: 0; left: inherit; width: 0">
+		        <span></span>
+		    </div>
+		</div>
+	</div>
+
+<script>
+	$('#<?= $scope->getId() ?>').on('change', function () {
+
+		$(this).css('width', '70%')
+
+		var value = $(this).val()
+
+		$('#<?= $scope->getId() . "-loader" ?>').toggle()
+
+		var input = $(this)
+
+		$(this).request('<?= $this->getEventHandler('onFilterUpdate') ?>', {
+
+			data: {scopeName: '<?= $scope->getId() ?>'.replace('scope-', ''), value: value},
+
+			complete: function () {
+
+				$('#<?= $scope->getId() . "-loader" ?>').toggle()
+
+				$(input).css('width', '100%')
+			}
+		})
+	})
+</script>

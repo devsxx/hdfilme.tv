@@ -1,0 +1,46 @@
+<section class="box">
+
+    <div class="tap-film clearfix">
+
+        <div id="movie_episode" style="background: #ccc;padding: 6px;border-radius: 6px;margin: 2px;">
+
+            <ul class="list-inline list-film">
+
+                <div style="float: left;width: 106px;text-transform: uppercase;color: #eee;margin-top: 2px;margin-right: 6px;margin-left: 3px;font-size: 16px;border-radius: 3px;background-color: #68C939;padding: 6px;"> 
+                    <i class="fa fa-chevron-right"></i>{{ "Server 1"|_ }}
+                </div>
+
+                {% if episodeInfo and type != 3 %}
+
+                    {% for episode in episodeInfo %}
+
+                        {% set className = "new" %}
+
+                        {% if currentEpisode == episode.episode %}
+
+                            {% set className = "current" %}
+                        
+                        {% elseif checkEpisodeWatch(movie["id"], episode.episode) %}
+                            
+                            {% set className = "watched" %}
+
+                        {% endif %}
+
+                        <li>
+                            <a
+                                class="{{ className }}"
+                                {% if currentEpisode == episode.episode-1 %}
+                                    id="nextEpisodeToPlay"
+                                {% endif %}
+                                _episode="{{ count(episodeInfo) }}" _link="" _sub="" href="{{ url(mobilePrefix() ~ movie["friendly_url"] ~ "-" ~ movie["id"] ~ "-stream?episode=" ~ episode["episode"]) }}">
+
+                                {{ episode.episode_show ? episode.episode_show : episode.episode }}
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</section>

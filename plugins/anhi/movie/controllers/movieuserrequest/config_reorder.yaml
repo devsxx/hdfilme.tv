@@ -1,0 +1,4 @@
+title: MovieUserRequest
+modelClass: Anhi\Movie\Models\MovieUserRequest
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,53 @@
+<div class="profile-sidebar">
+	<!-- Avatar -->
+	<div class="body-section text-center">
+		<div>
+			<script type="text/javascript" src="{{ "assets/pupload/plupload.full.js"|theme }}"></script>
+			<script type="text/javascript" src="{{ "assets/pupload/single_image.js"|theme }}"></script>
+
+			<div class="upload_single_image textC">
+				<div class="upload_complete profile-userpic">
+					<a href="{{ user.avatar.path ?: "assets/img/default-avatar.jpg"|theme }}" onclick="lightbox(this); return false;"><img width="150" class="img_border" src="{{ user.avatar.path ?: "assets/img/default-avatar.jpg"|theme }}"></a>
+				</div>
+				<div class="clear"></div>
+
+				<div class="upload_info link1" style="display:none;"></div>
+				<div class="clear"></div>
+
+				<div class="upload_error" style="display:none;"></div>
+				<div class="clear"></div>
+
+				<div class="upload_action link1" style="margin-top: 10px;">
+					<a href="javascript:void(0)" class="user-link" id="action_upload" avatar-id="{{ user.avatar.id }}">{{ "Avatar ändern"|_ }}</a> |
+					<a href="javascript:void(0)" class="user-link" onclick="deleteAvatar(this)" id="action_del" avatar-id="{{ user.avatar.id }}">{{ "Lösche Avatar"|_ }}</a>
+				</div>
+				<div class="clear"></div>
+				<!-- Temp html -->
+				<div id="temp" style="display:none">
+					<div id="upload_complete">
+						<a href="{file_url}" onclick="lightbox(this); return false;"><img src="{{ user.avatar.path }}" width="150" class="img_border avatar"></a>
+					</div>
+					<div id="upload_info">
+						<div class="contentProgress" style="width:150px; margin-top:3px;">{file_name} : {file_size}</div>
+						<div class="contentProgress" style="width:150px; margin-top:3px;"><div class="progress barO" style=""></div></div>
+					</div>
+					<div id="upload_error">
+						<div class="error f12">{file_error}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="profile-usertitle">
+		<div class="profile-usertitle-name">
+			{{ user.email }}
+		</div>
+		<div class="profile-usertitle-vip">
+			{{ "userVip"|_ }}: {{ days }} Days
+		</div>
+	</div>
+	<div class="profile-usermenu">
+		{% partial "@_user_nav" className="nav" %}
+	</div>
+</div>

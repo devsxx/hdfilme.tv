@@ -1,0 +1,29 @@
+<div style="color: red" id="link-error"></div>
+<input
+    type="text"
+    id="link_filmstart"
+    name="<?= $name ?>"
+    value="<?= $value ?>"
+    class="form-control"
+    autocomplete="off" />
+
+<div class="loading-indicator-container film-start">
+    
+    <button
+        type="button"
+        class="btn btn-link btn-get-film-info">
+        Lấy thông tin phim
+    </button>
+
+    <button
+        type="button"
+        id="show_hide_film_info"
+        style="display: none;"
+        class="btn btn-link show-film-info">
+        Ẩn thông tin phim gốc
+    </button>
+
+    <div id="origin_film_info" style="display: none;">
+        <img src="" id="origin_poster" width="25%">
+    </div>
+</div>

@@ -1,0 +1,74 @@
+{% if not isVip() %}
+	<a href="javascript:void(0)" class="buttonStyle pull-right mt20" onclick="popupPayment('{{url(mobilePrefix() ~ 'payment-list')}}')">{{ "Ein Film oder Serien anfordern"|_ }}</a>
+{% else %}
+	<a href="#movie_request" name="movie_request" class="buttonStyle color-box-button pull-right mt20">{{ "Ein Film oder Serien anfordern"|_ }}</a>
+	{% if errors.has('message') %}
+		<p class="message text-center hide_me mt10 mb20 clear">{{ errors.first("message") }}</p>
+	{% endif %}
+
+	<!-- -- form request-- -->
+	<div class="hide">
+		<div class="box" id="movie_request">
+			<div class="header">{{ "Senden Sie Filmanforderung"|_ }}</div>
+			<div class="content" style="padding:10px;">
+				{% if errors.has('successRequest') %}
+				<div id="movie_request_notice" class="">
+					<div class="nNote nSuccess hideit">
+						<p>
+							@lang("messages.requestFilmSuccess")
+						</p>
+					</div>
+				</div>
+				{% endif %}
+				<form id="movie_request_form" class="t-form" action="{{url("/movie/request")}}" method="post">
+					<div class="form-row">
+						<label class="form-label" for="movie_request_link">{{ "Filmlink anfragen:"|_ }}<span class="req">*</span></label>
+						<div class="form-item">
+							<span class="one"><input name="link" id="movie_request_link" type="text" class="t-input" style="width:220px;"></span>
+							<div class="clear"></div>
+							{% if errors.has('link') %}
+							<div name="content_error" class="error">@lang("messages.inputError")</div>
+							{% endif %}
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="form-row" style="min-height: 35px;">
+						<label class="form-label" for="movie_request_is_season">{{ "Staffel:"|_ }}</label>
+						<div class="form-item">
+							<span class="one">
+								<input class="checkToggleNext" type="checkbox" name="type" value="1">
+								<span class="nextToggle">
+									<input name="name" id="movie_request_season" type="text" class="t-input" style="width:100px;">
+								</span>
+							</span>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="form-row">
+						<label class="form-label" for="security_code"><span class="req">{{ "Captcha"|_ }} *</span></label>
+						<div class="form-item captcha-item">
+							{% flash %}
+								{{ "Please tick the reCaptcha box to say you are human"|_ }}
+							{% endflash %}
+							{% component 'captcha' %}
+
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="form-row">
+						<label class="form-label">&nbsp;</label>
+						<div class="form-item">
+							<input type="submit" value="@lang("messages.send")" class="buttonS bGreen cursorP">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</form>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+{% endif %}

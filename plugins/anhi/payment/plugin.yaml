@@ -1,0 +1,57 @@
+plugin:
+    name: 'anhi.payment::lang.plugin.name'
+    description: 'anhi.payment::lang.plugin.description'
+    author: anhi
+    icon: oc-icon-cc-paypal
+    homepage: ''
+navigation:
+    payment:
+        label: 'Nạp Tiền'
+        url: anhi/payment/package
+        icon: icon-cc-paypal
+        permissions:
+            - payment
+        sideMenu:
+            payment-packages:
+                label: 'Gói nạp'
+                url: anhi/payment/package
+                icon: icon-cc-paypal
+                permissions:
+                    - payment.packages
+            paygate:
+                label: 'Cổng thanh toán'
+                url: anhi/payment/paygate
+                icon: icon-bars
+                permissions:
+                    - payment.paygates
+            transactions:
+                label: 'Giao dịch'
+                url: anhi/payment/transaction
+                icon: icon-money
+                permissions:
+                    - payment.transactions
+permissions:
+    payment:
+        tab: 'Nạp Tiền'
+        label: 'Quản lý nạp tiền'
+    payment.packages:
+        tab: 'Gói Nạp'
+        label: 'Quản lý gói nạp'
+    payment.paygates:
+        tab: 'Cổng Nạp'
+        label: 'Quản lý cổng nạp'
+    payment.transactions:
+        tab: 'Giao Dịch'
+        label: 'Quản lý giao dịch'
+    payment.packages.add:
+        tab: 'Gói Nạp'
+        label: 'Thêm gói nạp'
+    payment.packages.delete:
+        tab: 'Gói Nạp'
+        label: 'Xoá gói nạp'
+    payment.paygates.add:
+        tab: 'Cổng Nạp'
+        label: 'Thêm cổng nạp'
+    payment.paygates.delete:
+        tab: 'Cổng Nạp'
+        label: 'Xoá cổng nạp'

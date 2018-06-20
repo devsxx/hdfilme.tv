@@ -1,0 +1,108 @@
+{% if paging %}
+
+	{% if paging.endPage > 1 %}
+
+		<div class="text-right">
+			<nav class="clearfix">
+				<ul class="pagination pagination-append-url pagination-sm pull-right">
+
+					{% set limit = 3 %}
+
+					{% if paging.endPage > limit %}
+
+						<li class="dropdown-paging-wrapper">
+
+							<a class="toggle-parent" href="javascript:void(0)">
+								<i class="fa fa-caret-down"></i>{{ "Seite"|_ }} {{ paging["currentPage"] }}/{{ paging["endPage"] }}
+							</a>
+
+							<div class="dropdown-paging">
+								<ul class="slimScrollGlobal">
+									{% for i in paging["startPage"]..paging["endPage"] %}
+										<li class="{{ i == paging["currentPage"] ? "active" : ""}}">
+											<a
+												href="javascript:void(0)"
+												{% if pageName %} data-page-name="{{ pageName }}" {% endif %}
+												data-page="{{i}}">
+													{{i}}
+											</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+						</li>
+
+					{% endif %}
+
+					{% if paging["currentPage"] > (limit + 1) %}
+						<li>
+							<a href="javascript:void(0)"
+								{% if pageName %} data-page-name="{{ pageName }}" {% endif %} data-page="{{ paging["startPage"] }}">&lt;&lt;</a>
+						</li>
+					{% endif %}
+
+					{% if paging["currentPage"] > 1 %}
+						<li>
+							<a href="javascript:void(0)" 
+							{% if pageName %} data-page-name="{{ pageName }}" {% endif %}  data-page="{{ paging["previousPage"] }}">&lt;</a>
+						</li>
+					{% endif %}
+
+					{% 
+						set prev = paging["currentPage"] > limit
+								? paging["currentPage"] - limit
+								: 1 
+					%}
+
+					{% for i in prev..paging["currentPage"] %}
+
+						{% if i < paging["currentPage"] %}
+							<li>
+								<a href="javascript:void(0)"
+									{% if pageName %} data-page-name="{{ pageName }}" {% endif %}  data-page="{{i}}">{{i}}</a>
+							</li>
+						{% endif %}
+						
+					{% endfor %}
+
+					{% if paging["currentPage"]>0 %}
+						<li class="active">
+							<a>{{ paging["currentPage"] }}</a>
+						</li>
+					{% endif %}
+
+					{%
+						set next = paging["endPage"] > paging["currentPage"] + limit
+								? paging["currentPage"] + limit
+								: paging["endPage"]
+					%}
+
+					{% if paging["currentPage"]+1 <= next %}
+						{% for i in paging["currentPage"]+1..next %}
+							<li>
+								<a href="javascript:void(0)"
+									{% if pageName %} data-page-name="{{ pageName }}" {% endif %}  data-page="{{i}}">{{i}}</a>
+							</li>
+						{% endfor %}
+					{% endif %}
+
+					{% if paging["endPage"] > (paging["currentPage"] + limit) %}
+						<li>
+							<a href="javascript:void(0)"
+								{% if pageName %} data-page-name="{{ pageName }}" {% endif %} data-page="{{ paging["currentPage"] + limit + 1}}">&gt;</a>
+						</li>
+					{% endif %}
+
+					{% if paging["endPage"] > (paging["currentPage"] + limit) %}
+						<li>
+							<a href="javascript:void(0)"
+								{% if pageName %} data-page-name="{{ pageName }}" {% endif %} data-page="{{ paging["endPage"] }}">&gt;&gt;</a>
+						</li>
+					{% endif %}
+
+				</ul>
+			</nav>
+		</div>
+	{% endif %}
+
+{% endif %}

@@ -1,0 +1,77 @@
+[captcha]
+==
+<?php
+
+	function onStart ()
+	{
+		$this['error'] = Session::get('error');
+
+		$this['captchaError'] = count(Flash::get('error'));
+
+		$this['email'] = Session::get('email');
+
+		if (empty($this['email']))
+			$this['email'] = Request::old('email');
+
+	}
+?>
+==
+<div class="form-login">
+	<div class="row login">
+		<form id="form_login" class="t-form col-xs-12" action="/login" method="post">
+		    
+			<div class="row row-title">
+				<div class="col-xs-12">
+					<label class="form-label" for="login_email">{{ 'email'|_ }}:</label>
+				</div>
+			</div>
+			<div class="row col-md-10">
+				<input placeholder="{{ "Email"|_ }}" type="text" id="login_email" class="form-control" name="email" value="{{ email }}">
+			    <p class="message login-eror red-alert">{{ error.msg }}</p>
+			</div>
+
+			<div id="log-password" class="row row-title">
+				<div class="col-xs-12">
+					<label class="form-label" for="login_password">{{ "Password"|_ }}:</label>
+				</div>
+			</div>
+			<div class="row col-md-10">
+				<input placeholder="{{ "Password"|_ }}" type="password" id="login_password" class="form-control" name="password">
+			</div>
+
+			{% if error.captcha or captchaError and loginPage %}
+				<div class="row">
+					<div class="col-xs-12">
+						{% flash %}
+					 		{{ "captchaError"|_ }}
+					 	{% endflash %}
+
+						{% component 'captcha' %}
+
+					</div>
+				</div>
+			{% endif %}
+
+			<div class="col-md-10 radio-text">
+				<div id="rememer-acc" class="clearfix">
+					<label class="checkbox checkbox-float">
+						<input type="checkbox" class="text-nomarl" name="remember" id="remember"> {{ "Erinnere dich an mich"|_ }}
+					</label>
+				</div>
+			</div>
+			<div class="row col-md-10 button-login clearfix">
+				<input type="submit" id="login-origin" class="btn btn-lg btn-block" value="{{ "Senden"|_ }}">
+			</div>
+			<div class="row col-md-10 button-login user-link-block">
+				<span class="register-link">
+					<a href="{{ url(mobilePrefix() ~ 'register') }}">{{ "Registrieren"|_ }}</a>
+					 | 
+				</span>
+				<a class="user-link" href="{{ url(mobilePrefix() ~ 'password/reset') }}">{{ "Password vergessen"|_ }}</a>
+				 | 
+				<a class="user-link" href="{{ url(mobilePrefix() ~ 'activation') }}">{{ "Aktiviere den Account"|_ }}</a>
+			</div>
+
+		</form>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<?php
+	
+	$buttons = [
+		'status' => 'Đã xử lý',
+	];
+
+	foreach ($buttons as $key => $name) { ?>
+		
+		<button
+			style="margin-bottom: 2%"
+			data-request="onUpdateMovieErrorReport"
+			data-request-data="field: '<?= $key ?>', id: <?= $record['id'] ?>"
+			data-request-success="
+				if (data.result) {
+					$(this).removeClass('btn-default')
+					$(this).addClass('btn-primary')
+				} else {
+					$(this).addClass('btn-default')
+					$(this).removeClass('btn-primary')
+				}
+				
+			 "
+			type="button"
+			data-request-loading="#btn-loader-<?= $record['id'] ?>"
+			class="btn <?= $record[$key] ? 'btn-primary' : 'btn-default'  ?> btn-xs"><?=  $name ?>
+			</button>
+			<br />
+
+			
+<?php
+	}
+
+?>
+
+<div style="display: inline-block;" class="loading-indicator-container action-spinner" id="btn-loader-<?= $record['id'] ?>">
+    <div style="padding: 0" class="loading-indicator size-small">
+        <span></span>
+    </div>
+</div>
+
+<script type="text/javascript">
+	$('.action-spinner').hide()
+</script>

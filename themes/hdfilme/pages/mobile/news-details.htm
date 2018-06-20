@@ -1,0 +1,16 @@
+title = "News Details"
+url = "/mobile/news/:slug"
+layout = "default"
+is_hidden = 0
+
+[newsDetails]
+slug = "{{ :slug }}"
+
+[sidebar]
+
+[viewBag]
+localeUrl[de] = "/news-details"
+[session]
+security = "all"
+==
+{% partial 'pages/news-details' %}

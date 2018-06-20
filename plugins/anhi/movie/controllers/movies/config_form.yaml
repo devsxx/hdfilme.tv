@@ -1,0 +1,10 @@
+name: Movies
+form: $/anhi/movie/models/movie/fields.yaml
+modelClass: Anhi\Movie\Models\Movie
+defaultRedirect: anhi/movie/movies
+create:
+    redirect: 'anhi/movie/movies/update/:id'
+    redirectClose: anhi/movie/movies
+update:
+    redirect: anhi/movie/movies
+    redirectClose: anhi/movie/movies

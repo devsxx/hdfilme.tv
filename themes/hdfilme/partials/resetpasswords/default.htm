@@ -1,0 +1,34 @@
+<div class="form-confirm-cas box-note">
+	<div class="">
+		<div class="form-login confirm">
+			<form action="{{ url('/password/email') }}" method="post">
+				<div class="row row-title">
+					<div class="col-xs-12">
+						<label for="email">{{"email"|_}}:</label>
+					</div>
+				</div>
+				<div class="row col-md-10">
+					<input placeholder="{{"placeholderEmail"|_ }}" name="email" class="form-control" id="email" type="text" class="t-input">
+					{% if errors.has('email') %}
+					<p class="message red-alert">{{ errors.first("email") }}</p>
+					{% endif %}
+				</div>
+				<div class="row row-title">
+					<div class="col-xs-12">
+						<label for="email">{{ 'captchaInput'|_ }}:</label>
+					</div>
+				</div>
+				<div class="row col-md-10">
+					{% flash %}
+				 		<p class="message red-alert">{{ "captchaError"|_ }}</p>
+				 	{% endflash %}
+
+					{% component 'captcha' %}
+				</div>
+				<div class="row col-md-10">
+					<input class="buttonM bGreen btn-block" value="{{ "buttonResetPassword"|_ }}" type="submit">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+plugin:
+    name: 'anhi.userprofile::lang.plugin.name'
+    description: 'anhi.userprofile::lang.plugin.description'
+    author: anhi
+    icon: oc-icon-user
+    homepage: ''

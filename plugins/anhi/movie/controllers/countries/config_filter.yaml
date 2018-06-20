@@ -1,0 +1,7 @@
+
+scopes:
+
+  id:
+    label: Mã số
+    type: text
+    conditions: name in (:filtered)

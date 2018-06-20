@@ -1,0 +1,16 @@
+fields:
+    country_name:
+        label: 'Tên Quốc Gia'
+        oc.commentPosition: ''
+        span: auto
+        placeholder: 'Tên Quốc Gia'
+        required: 1
+        type: text
+    order:
+        label: 'Thứ Tự'
+        oc.commentPosition: ''
+        span: auto
+        default: '0'
+        attributes:
+            type: number
+        type: number

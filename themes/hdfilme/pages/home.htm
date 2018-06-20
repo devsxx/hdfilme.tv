@@ -1,0 +1,53 @@
+title = "home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[bannerSlider]
+
+[posterSlider]
+
+[sidebar]
+
+[session]
+security = "all"
+==
+function onStart ()
+{
+
+	$couponResult = Session::get('couponResult');
+
+	$this->page->couponResult = $couponResult;
+}
+==
+{% partial 'pages/home' %}
+
+{% if this.page.couponResult.msg %}
+	
+	{% put scripts %}
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content" style="margin-top: 10rem">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title" style="color: black">Coupon Code</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p style="color: {{this.page.couponResult.success ? 'green' : 'red'}}">{{ this.page.couponResult.msg }}</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+	<script type="text/javascript">
+		$("#myModal").modal('show')
+	</script>
+	{% endput %}
+{% endif %}

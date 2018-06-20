@@ -1,0 +1,39 @@
+
+<div class="detail">
+
+    {% if not isVip() %}
+        {% if viewType == "info" %}
+            {% component "ad" name='ads728x90_info' %}
+        {% elseif viewType == "stream" or viewType == "trailer" %}
+            {% component "ad" name='ads864x170_watch' %}
+        {% endif %}
+    {% endif %}
+    
+    {% partial '@_episode' movie=movie type=movie.type episodeInfo=episodeInfo currentEpisode=currentEpisode %}
+
+
+    {% if not isVip() %}
+        {% if viewType == "info" %}
+            {% component "ad" name='ads864x170_info' %}
+        {% elseif viewType == "stream" or viewType == "trailer" %}
+            {% component "ad" name='ads728x90_watch' %}
+        {% endif %}
+    {% endif %}
+
+    {% partial '@_info' movie=movie %}
+
+    {% if not isVip() %}
+    
+    <div style="text-align: center">
+        <div style="display: inline-block;">
+            {% component "ad" name='ads300x250_info' %}
+        </div>
+        <div style="display: inline-block;">
+            {% component "ad" name='ads300x250_info' %}
+        </div>
+    </div>
+   {% endif %}
+
+    
+</div>
+<div class="clear"></div>

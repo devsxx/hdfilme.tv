@@ -1,0 +1,31 @@
+
+
+{% put head %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="title" content="{{ movie["site_title"] }}"/>
+    <meta name="description" content="{{ movie["meta_desc"] }}"/>
+    <meta name="keywords" content="{{ movie["meta_key"] }}"/>
+
+    <title>{{ movie["site_title"] }}</title>
+{% endput %}
+
+{% if movie %}
+
+    {% component "ad" name='adsMobile320x50_info' %}
+
+    {% if type == "info" %}
+
+        <!-- film baner section -->
+        {% partial "@_film_banner" movie=movie %}
+
+    {% else %}
+
+        <!-- film player and trailer -->
+        {% partial "@_stream_trailer" type=type movie=movie currentEpisode=currentEpisode %}
+
+    {% endif %}
+
+
+    {% component "movieActionBar" movie=movie download=download %}
+
+{% endif %}

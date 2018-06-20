@@ -1,0 +1,11 @@
+plugin:
+    name: 'anhi.coupon::lang.plugin.name'
+    description: 'anhi.coupon::lang.plugin.description'
+    author: anhi
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    menu-coupon:
+        label: "\bMã Khuyến Mãi"
+        url: anhi/coupon/couponcontroller
+        icon: icon-ticket

@@ -1,0 +1,83 @@
+<div class="hide">
+    <div class="box" id="movie_report_error">
+    
+        <div class="header">{{ "reportFilmHeader"|_ }}</div>
+        <div class="content" style="padding:10px;">
+
+            {% if errors.has('message') %}
+                <div id="movie_report_error_notice" class="">
+                    <div class="nNote nSuccess hideit">
+                        <p>
+                           {{ "reportFilmSuccess"|_ }}
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+            <form id="movie_report_error_form" class="t-form require-one-field" action="{{ url(mobilePrefix() ~ "/movie/report") }}" method="post">
+                <div class="error totalError">{{ "requireOne"|_ }}</div>
+                <div class="form-row">
+                    <label class="form-label">{{ "reportFilmTitle"|_ }}:</label>
+                    <div class="form-item fontB pt5" title="{{info["name"]}}">
+                        {{info["name"]}}
+                        <input type="hidden" name="movie_name" value="{{info["name"]}}"/>
+                        <input type="hidden" name="movie_id" value="{{info["id"]}}"/>
+                        <input type="hidden" name="movie_type" value="{{info["type"]}}"/>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="form-row">
+                    <label class="form-label" for="movie_report_error_episode">{{ "movieEpisode"|_ }}:</label>
+                    <div class="form-item">
+                        <span class="one"><input name="episode" id="movie_report_error_episode" type="number" class="t-input"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="form-row">
+                    <label class="form-label">{{ "reportFilmVideo"|_ }}:</label>
+                    <div class="form-item">
+                        <span class="one">
+                            <label><input type="checkbox" name="movie_error[]" value="deadlink"> {{ "reportFilmeVideoDielink"|_ }}</label><br/>
+                            <label><input type="checkbox" name="movie_error[]" value="wrongmovie"> {{ "reportFilmeVideoWrongMovie"|_ }}</label><br/>
+                            <label><input type="checkbox" name="movie_error[]" value="notfull"> {{ "reportFilmeVideoNotFull"|_ }}</label><br/>
+                            <label><input type="checkbox" name="movie_error[]" value="other"> {{ "reportFilmeVideoOther"|_ }}</label>
+                        </span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="form-row">
+                    <label class="form-label">{{ "reportFilmAudio"|_ }}:</label>
+                    <div class="form-item">
+                        <span class="one">
+                            <label><input type="checkbox" name="audio_error[]" value="wrongaudio"> {{ "reportFilmAudioWrongAudio"|_ }}</label><br/>
+                            <label><input type="checkbox" name="audio_error[]" value="noaudio"> {{ "reportFilmAudioNoAudio"|_ }}</label><br/>
+                            <label><input type="checkbox" name="audio_error[]" value="notsync"> {{ "reportFilmAudioNotSync"|_ }}</label><br/>
+                            <label><input type="checkbox" name="audio_error[]" value="other"> {{ "reportFilmAudioOther"|_ }}</label>
+                        </span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="form-row">
+                    <label class="form-label" for="movie_report_error_content">{{ "reportFilmeMessage"|_ }}:</label>
+                    <div class="form-item">
+                        <span class="one"><input name="description" id="movie_report_error_content" type="text" class="t-input"></span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="form-row">
+                    <label class="form-label">&nbsp;</label>
+                    <div class="form-item">
+                        <input type="submit" value="{{ "send"|_ }}" class="buttonS bGreen cursorP">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+    </div>

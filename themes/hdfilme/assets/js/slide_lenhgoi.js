@@ -1,0 +1,1 @@
+function abc(text){var key=aesjs.util.convertStringToBytes("KHONGcoKEYdauMA!");var textBytes=aesjs.util.convertStringToBytes(text,'hex');var aesEcb=new aesjs.ModeOfOperation.ecb(key);encryptedBytes=aesEcb.decrypt(textBytes).map(function(a){return String.fromCharCode(a)}).join("");document.write(encryptedBytes)}

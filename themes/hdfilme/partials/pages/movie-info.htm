@@ -1,0 +1,41 @@
+==
+    
+use Anhi\Shared\Services\MovieService;
+
+function onStart ()
+{
+    $this['slug'] = $this->param('filmTitle');
+}
+
+==
+<section>
+    <div class="container">
+
+    {% component "movieInfo" slug=slug %}
+
+    </div>
+
+</section>
+
+<section class="box">
+
+    <div class="container">
+
+        {% component "ad" name='adsMobile300x250_info' %}
+
+        <div class="row">
+
+            <div class="col-md-9 main">
+            	{% component "movieInfoComment" slug=slug %}
+            </div>
+
+            {% if not isMobile %}
+	            <div class="col-md-3 sidebar">
+                    {% component "sidebar" slug=slug %}
+	            </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+</section>

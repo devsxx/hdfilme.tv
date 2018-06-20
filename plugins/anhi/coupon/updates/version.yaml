@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.9:
+    - 'Created table anhi_coupon_coupons'
+    - builder_table_create_anhi_coupon_coupons.php
+1.0.10:
+    - 'Created table anhi_coupon_codes'
+    - builder_table_create_anhi_coupon_codes.php
+1.0.11:
+    - 'Updated table anhi_coupon_codes'
+    - update_table_code.php

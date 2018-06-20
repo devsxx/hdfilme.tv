@@ -1,0 +1,41 @@
+<?php $thumb = explode(".", $info["image_name"]);
+    $thumb[0] .= "_thumb";
+    $thumb = implode(".", $thumb);
+    $listQuality = \App\Helpers\Helper::getMovieQuality();
+    $quality = isset($listQuality[$info["quality"]]["name"]) ? $listQuality[$info["quality"]]["name"] : '';
+?>
+<div id="_box-product-{{ info["id"] }}" class="box-product clearfix" data-popover="movie-data-popover-{{ info["id"] }}">
+    <a href="{{ url(mobilePrefix() ~ info["friendly_url"] ~ "-" ~ info["id"] ~ "-info") }}" class="pull-left">
+        <img
+            class="img"
+            src="{{ info.poster.thumb }}"
+            onerror="this.onerror=null;this.src='{{ "assets/img/default_thumb.jpg"|theme }}';">
+    </a>
+    <div class="decaption">
+        <h3 class="title-product">
+            <a href="{{ url(mobilePrefix() ~ info["friendly_url"] ~ "-" ~ info["id"] ~ "-info") }}">{{ info["name"] }}</a>
+        </h3>
+        <span class="view-product">{{ "View"|_ }} : {{info["view"]}}</span>
+        <span class="start">
+            <p class="review"></p>
+            <div title="{{ info["name"] }}" class="star-rating">
+                <div class="rateit" data-rateit-value="{{ info["rate"] }}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+            </div>
+            <p></p>
+        </span>
+        <a href="{{url(mobilePrefix() ~ info["friendly_url"] ~ "-" ~ info["id"] ~ "-info")}}" class="btn btn-xem">    {{ type }}
+            <i class="fa fa-play-circle"></i>
+        </a>
+
+        {% if favourite %}
+            <a href="javascript:void(0)" id="del-favorite-{{info["id"]}}" movie-id="{{info["id"]}}" onclick="favorite(this, 1);return false;" class="btn btn-del btn-small pull-right"><i class="fa fa-trash"></i></a>
+        {% endif %}
+
+    </div>
+
+    <a href="{{ url(mobilePrefix() ~ info["friendly_url"] ~ "-" ~ info["id"] ~ "-info")}}">
+        <span class="over_play_min"></span>
+    </a>
+
+    {% partial "@_movie_info_popover" movie=info %}
+</div>

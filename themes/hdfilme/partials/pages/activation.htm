@@ -1,0 +1,44 @@
+==
+
+function onStart()
+{
+	$paramCode = $this->param('paramCode');
+}
+
+==
+
+<div class="container">
+	<div class="row main">
+		<div class="navbar-menu">
+			<div class="row col-xs-12 col-md-8 col-lg-8">
+				<div class="logo">
+					<a href="{{mobilePrefix()}}">
+						<img src="{{ 'assets/img/logo.png'|theme }}" class="img-responsive">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="bg-main">
+			<div class="col-xs-12 col-md-12">
+				<h1 class="title"><span>{{ "AKTIVIERE DEN ACCOUNT"|_ }}</span></h1>
+				{% if session('status') %}
+				<div class="message-status" style="margin-bottom: 20px">
+					{{ session('status') }}
+				</div>
+				{% endif %}
+			</div>
+			<div class="col-xs-12 col-md-12">
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+
+						{% partial "reset_password_link"  url=url('/activation') %}
+						
+					</div>
+					<div class="col-xs-12 col-md-6">
+						{% partial 'login_social' %}
+					</div>
+				</div>
+			</div><!--end block-->
+		</div>
+	</div>
+</div><!-- /container -->

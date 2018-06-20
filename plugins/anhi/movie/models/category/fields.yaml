@@ -1,0 +1,7 @@
+fields:
+    category_name:
+        label: Tên
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: text

@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table anhi_advertisement_ads'
+    - builder_table_create_anhi_advertisement_ads.php
+1.0.3:
+    - 'Updated table anhi_advertisement_ads'
+    - builder_table_update_anhi_advertisement_ads.php
+1.0.4:
+    - 'Updated table anhi_advertisement_ads'
+    - builder_table_update_anhi_advertisement_ads_2.php
+1.0.5:
+    - 'Add index ads'
+    - add_index_ads.php

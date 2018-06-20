@@ -1,0 +1,4 @@
+columns:
+    actor_name:
+        label: 'Tên diễn viên'
+        type: text

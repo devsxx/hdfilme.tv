@@ -1,0 +1,29 @@
+<div class="widget" id="main_content">
+	<div class="title-section">
+		<span>{{ "Neuigkeiten auflisten"|_ }}<i class="fa fa-chevron-right pull-right"></i></span>
+	</div>
+	<div class="body-section">
+		<ul class="listNews">
+			{% for news in newsList %}
+				<li class="newItem">
+					<div class="newImage">
+						<a href="{{ mobilePrefix() }}news/{{ news.slug }}">
+							<img src="{{news.image|media}}" width="100%" alt="{{ new.title }}">
+						</a>
+					</div>
+					<div class="newContent">
+						<h3 class="newTitle">
+							<a href="{{ mobilePrefix() }}news/{{ news.slug }}">
+								<b>{{ news.title }}</b>
+							</a>
+						</h3>
+						<p class="newTime"><i>{{ news.created_at }} | View: {{ news.statistics }}</i></p>
+						<p class="newDesc">
+							{{ news.introductory|raw }}
+						</p>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

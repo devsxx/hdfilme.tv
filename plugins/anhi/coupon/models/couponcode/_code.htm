@@ -1,0 +1,26 @@
+<?php
+	
+	use Anhi\Coupon\Models\Code;
+
+?>
+
+<?php
+	
+	if (!$model->id) {
+
+?>
+
+	 <div class="form-group">
+	    <label>Số lượng code</label>
+	    <input type="number" min="1" max="1000" name="CouponCode[quantity]" class="form-control" />
+	</div>
+
+<?php } else { ?>
+	
+	<div class="form-group">
+	    <label>Số lượng code (Đã dùng/Tổng):  <?= Code::where('coupon_id',$model->id)->whereRaw('user_email is not null and user_email <> ""')->count() ?>/<?= $model->quantity ?></label>
+	    <br />
+		<a type="_blank" href="/coupons/download?id=<?= $model['id'] ?>">Download danh sách codes</a>
+	</div>
+
+<?php } ?>

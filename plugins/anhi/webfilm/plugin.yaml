@@ -1,0 +1,6 @@
+plugin:
+    name: 'anhi.webfilm::lang.plugin.name'
+    description: 'anhi.webfilm::lang.plugin.description'
+    author: anhi
+    icon: oc-icon-film
+    homepage: ''

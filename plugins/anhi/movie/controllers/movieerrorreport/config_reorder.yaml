@@ -1,0 +1,4 @@
+title: MovieErrorReport
+modelClass: Anhi\Movie\Models\MovieErrorReport
+toolbar:
+    buttons: reorder_toolbar

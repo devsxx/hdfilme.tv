@@ -1,0 +1,6 @@
+codes:
+    label: Codes
+    view:
+        list: $/anhi/coupon/models/code/columns.yaml
+        toolbarButtons: false
+        recordsPerPage: 10

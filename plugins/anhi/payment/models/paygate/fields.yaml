@@ -1,0 +1,16 @@
+fields:
+    code:
+        label: Mã
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: text
+    paygate_name:
+        label: 'Tên cổng'
+        span: auto
+        oc.commentPosition: ''
+        type: text
+    active:
+        label: Active
+        span: auto
+        type: switch

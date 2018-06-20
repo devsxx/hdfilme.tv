@@ -1,0 +1,31 @@
+scopes:
+
+  package_name:
+    label: Tên gói
+    type: text
+    placeholder: 'Nhập tên gói'
+    conditions: package_name like concat('%', :filtered, '%')
+
+  paygate:
+    label: Cổng thanh toán
+    type: group
+    modelClass: Anhi\Payment\Models\Paygate
+    nameFrom: paygate_name
+    valueFrom: code
+    conditions:  paygate_code in (:filtered)
+
+  price:
+    label: Giá tiền
+    type: text
+    placeholder: Nhập giá tiền
+    conditions: price = :filtered
+
+  created_at:
+    label: Ngày tạo
+    type: date
+    conditions: created_at like concat('%', :filtered, '%')
+
+  updated_at:
+    label: Ngày cập nhật
+    type: date
+    conditions: updated_at like concat('%', :filtered, '%')

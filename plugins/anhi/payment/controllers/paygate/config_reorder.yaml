@@ -1,0 +1,4 @@
+title: Paygate
+modelClass: Anhi\Payment\Models\Paygate
+toolbar:
+    buttons: reorder_toolbar

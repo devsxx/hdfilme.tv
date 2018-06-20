@@ -1,0 +1,33 @@
+<ul class="{{ className }}">
+	<li>
+		<a href="{{ url('/user') }}">
+			<i class="glyphicon glyphicon-user"></i>
+			{{ "Benutzerinfo"|_ }}
+		</a>
+	</li>
+	<li>
+		<a href="{{ url('/user/movie/favorite') }}">
+			<i class="glyphicon glyphicon-film"></i>
+			{{ "Deine Filme"|_ }}
+		</a>
+	</li>
+	<li>
+		<a href="{{ url('/user/edit') }}">
+			<i class="glyphicon glyphicon-pencil"></i>
+			{{ "Info bearbeiten"|_ }}
+		</a>
+	</li>
+	<li>
+		<a href="{{ url('/user/payment-history') }}">
+			<i class="glyphicon glyphicon-ok"></i>
+			{{ "Geschichte"|_ }}
+		</a>
+	</li>
+	<li>
+		<a href="{{ url('/logout') }}">
+			<i class="glyphicon glyphicon-log-out"></i>
+			{{ "Ausloggen"|_ }}
+		</a>
+	</li>
+</ul>
+

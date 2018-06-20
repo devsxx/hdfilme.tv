@@ -1,0 +1,19 @@
+
+<div class="box">
+	<div class="container">
+		<div class="row">
+			<div class="main col-md-9">
+				{% component 'movieList' type="cat" id=this.param.id %}
+			</div>
+			{% if not isMobile %}
+
+				<div class="col-md-3 sidebar">
+
+					{% component "sidebar" %}
+
+				</div>
+
+			{% endif %}
+		</div>
+	</div>
+</div>

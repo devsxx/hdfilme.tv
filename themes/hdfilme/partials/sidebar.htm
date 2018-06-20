@@ -1,0 +1,75 @@
+<section class="widget-sidebar widget-face">
+
+	<img src="{{ 'assets/img/title-face.png'|theme }}">
+
+	<div style=" margin-bottom: 10px;;overflow:hidden">
+		<div class="fb-page" style="width:300px" data-href="https://www.facebook.com/HDfilmetv" data-width="300" data-height="299" data-hide-cover="false" data-show-facepile="false" data-show-posts="false">
+		</div>
+	</div>
+
+	<section class="widget-sidebar widget-face">
+	<!-- @widget('advertisement', ['adsType' => 'ads300x250_list']) -->
+	</section>
+
+	<section class="widget-sidebar widget-face">
+	 <!-- Place this tag in your head or just before your close body tag. -->
+		<script src="https://apis.google.com/js/platform.js" async="" defer="">
+		</script>
+
+		<!-- Place this tag where you want the widget to render. -->
+		<div class="g-page" data-width="300" data-href="//plus.google.com/u/0/104603238265872554001" data-layout="landscape" data-rel="publisher"></div>
+	</section>
+
+</section>
+
+<section class="widget-sidebar widget-face">
+<!-- SETUP ADS HERE  - BANNER widget 1---->
+<!-- SETUP ADS HERE -->
+ </section>
+ <script type="text/javascript">
+	function del_movie_favorite(movie_id) {
+		if(confirm('Sind Sie sicher, dass Sie das Video aus Ihrer Favoritenliste entfernen möchten?')){
+			$.ajax({
+				type: "GET",dataType: "html",async: false,  url :  '/movie/favorite_del/'+movie_id,
+				success: function(data)
+				{
+				  if(data == '1') {
+					$('#_box-product-'+movie_id).remove();
+
+				  }
+				}
+			});
+			return false;
+		}
+		return false;
+	}
+</script>
+
+<div class="toggle-wrapper">
+	<div class="navi-favorited toggle-parent">{{ 'Favorites'|_ }} ({{ favorite }}) <i class="fa fa-angle-double-right pull-right" style="line-height: inherit;"></i></div>
+
+	{% if favoriteMovies %}
+
+		<div class="toggle-content">
+			<section class="widget-sidebar widget-product">
+			<div class="body-widget-sidebar slimScroll">
+				{% for movie in favoriteMovies %}
+
+					{% partial '_movie_item' movie=movie type='STREAM' favorite=favorite %}
+
+				{% endfor %}
+					@foreach($listFavoriteFilm as $info)
+						@widget("filmItemSidebar", ["type" => "STREAM", "info" => $info, "favorite" => $favorite])
+					@endforeach
+			</div>
+			</section>
+		</div>
+
+	{% endif %}
+
+</div>
+<section class="widget-sidebar widget-face">
+</section>
+
+
+{% component 'sidebar' %}
